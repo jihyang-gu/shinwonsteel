@@ -1,0 +1,20 @@
+# Claude Code 내부 파일
+.claude/
+
+# OMC (oh-my-claudecode) 상태 파일
+.omc/
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 임시 파일
+*.tmp
+*.log

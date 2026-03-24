@@ -1,0 +1,1247 @@
+/* ==========================================================================
+   sub.css — 신원스틸(주) 서브 페이지 공통 스타일
+   회사개요, 경영이념, 회사연혁, 취급강종, 생산설비 등 서브 페이지 전용 컴포넌트
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   서브 페이지 래퍼
+   -------------------------------------------------------------------------- */
+.sub-wrapper {
+  padding: 80px 0;
+}
+
+/* --------------------------------------------------------------------------
+   섹션 타이틀 (서브 페이지 본문 내 h2)
+   -------------------------------------------------------------------------- */
+.sub-content .section-title {
+  font-size: 22px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+}
+
+/* 타이틀 하단 포인트 라인 */
+.sub-content .section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   회사 정보 테이블
+   -------------------------------------------------------------------------- */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 64px;
+}
+
+.info-table th,
+.info-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 15px;
+  line-height: var(--line-height-body);
+  text-align: left;
+}
+
+.info-table th {
+  width: 180px;
+  background: var(--color-bg-light);
+  color: var(--color-dark);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.info-table td {
+  color: var(--color-gray);
+}
+
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+
+.info-table tr:first-child th,
+.info-table tr:first-child td {
+  border-top: 2px solid var(--color-dark);
+}
+
+/* --------------------------------------------------------------------------
+   사업장 현황 — 3열 그리드
+   -------------------------------------------------------------------------- */
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.location-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 28px 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.location-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 100, 218, 0.3);
+}
+
+.location-card h3 {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-card h3::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.location-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: 1.8;
+  margin-top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   경영이념 — 슬로건
+   -------------------------------------------------------------------------- */
+.ideology-slogan {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #2a3a5c 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 56px 48px;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.slogan-text {
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1.8;
+  letter-spacing: -0.3px;
+}
+
+/* --------------------------------------------------------------------------
+   경영 가치 — 2열 그리드
+   -------------------------------------------------------------------------- */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.value-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 28px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.value-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 100, 218, 0.25);
+  transform: translateY(-2px);
+}
+
+.value-card__num {
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: rgba(27, 100, 218, 0.12);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.value-card h3 {
+  font-size: 17px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.value-card h3 em {
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.value-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: var(--line-height-body);
+}
+
+/* --------------------------------------------------------------------------
+   3대 경영 목표
+   -------------------------------------------------------------------------- */
+.goal-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 64px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.goal-item {
+  flex: 1;
+  padding: 36px 28px;
+  text-align: center;
+  border-right: 1px solid var(--color-border);
+  position: relative;
+  transition: background-color var(--transition-fast);
+}
+
+.goal-item:hover {
+  background-color: rgba(27, 100, 218, 0.02);
+}
+
+.goal-item:last-child {
+  border-right: none;
+}
+
+.goal-item::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+.goal-item strong {
+  display: block;
+  font-size: 17px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.goal-item p {
+  font-size: 13px;
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   회사연혁 — 수직 타임라인
+   -------------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 64px;
+}
+
+/* 수직 라인 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 40px 48px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* 타임라인 도트 */
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__year {
+  font-size: 22px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  min-width: 64px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.timeline__content {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.timeline__date {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  padding: 2px 8px;
+  border-radius: var(--border-radius-pill);
+  margin-bottom: 6px;
+}
+
+.timeline__content p {
+  font-size: 15px;
+  color: var(--color-dark);
+  line-height: var(--line-height-body);
+}
+
+/* --------------------------------------------------------------------------
+   취급강종 — 3열 그리드
+   -------------------------------------------------------------------------- */
+.grades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.grade-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 28px 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.grade-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.grade-card__name {
+  font-size: 26px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.grade-card__spec {
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.grade-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: var(--line-height-body);
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.grade-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+/* 태그 */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--color-bg-light);
+  border-radius: var(--border-radius-pill);
+  font-size: 12px;
+  color: var(--color-gray);
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.tag:hover {
+  background-color: rgba(27, 100, 218, 0.08);
+  color: var(--color-primary);
+}
+
+/* 강종 하단 CTA */
+.grades-cta {
+  background: linear-gradient(135deg, rgba(27, 100, 218, 0.04) 0%, rgba(27, 100, 218, 0.08) 100%);
+  border: 1px solid rgba(27, 100, 218, 0.18);
+  border-radius: var(--border-radius-lg);
+  padding: 44px 40px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.grades-cta p {
+  font-size: 16px;
+  color: var(--color-gray);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   생산설비 — 2열 그리드
+   -------------------------------------------------------------------------- */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.facility-grid:last-child {
+  margin-bottom: 0;
+}
+
+.facility-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 28px 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.facility-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 100, 218, 0.3);
+}
+
+.facility-card__num {
+  font-size: 36px;
+  font-weight: var(--font-weight-bold);
+  color: rgba(27, 100, 218, 0.15);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.facility-card h3 {
+  font-size: 17px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.facility-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: var(--line-height-body);
+  margin-bottom: 16px;
+}
+
+.facility-card ul {
+  padding-left: 0;
+}
+
+.facility-card ul li {
+  font-size: 13px;
+  color: var(--color-gray);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-bg-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.facility-card ul li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.facility-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   이미지 플레이스홀더
+   -------------------------------------------------------------------------- */
+.img-placeholder {
+  background-color: var(--color-bg-light);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-light);
+  font-size: 13px;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   섹션 공통 간격 (서브 페이지 본문 내 section 요소)
+   -------------------------------------------------------------------------- */
+.sub-content section {
+  margin-bottom: 64px;
+}
+
+.sub-content section:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   지도 플레이스홀더 (cheonan, busan, quote 페이지)
+   -------------------------------------------------------------------------- */
+.map-placeholder {
+  background-color: var(--color-bg-light);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray);
+  text-align: center;
+  padding: 40px;
+}
+
+.map-placeholder.large {
+  height: 400px;
+  margin: 32px 0;
+}
+
+.map-placeholder p {
+  font-size: 15px;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+.map-placeholder p + p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--color-gray-light);
+}
+
+/* --------------------------------------------------------------------------
+   찾아오시는 길 — direction cards (cheonan, busan 페이지)
+   -------------------------------------------------------------------------- */
+.direction-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.direction-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.direction-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* direction 카드 h3 안 SVG 아이콘 */
+.direction-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.direction-card ul {
+  padding-left: 0;
+}
+
+.direction-card ul li {
+  font-size: 14px;
+  color: var(--color-gray);
+  padding: 6px 0;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.direction-card ul li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* info-table 링크 색상 */
+.info-table td a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.info-table td a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   복리후생 그리드 (system 페이지)
+   -------------------------------------------------------------------------- */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 20px 28px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.benefit-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 100, 218, 0.3);
+  transform: translateY(-2px);
+}
+
+/* benefit-icon: SVG 래퍼 */
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background-color: rgba(27, 100, 218, 0.08);
+  border-radius: 16px;
+  color: var(--color-primary);
+  border: 1px solid rgba(27, 100, 218, 0.15);
+}
+
+.benefit-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.benefit-card h3 {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: var(--line-height-body);
+}
+
+/* --------------------------------------------------------------------------
+   인재상 그리드 (system 페이지)
+   -------------------------------------------------------------------------- */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.talent-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 28px 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.talent-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 100, 218, 0.25);
+}
+
+.talent-num {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  color: rgba(27, 100, 218, 0.15);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.talent-card h3 {
+  font-size: 17px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.talent-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: var(--line-height-body);
+}
+
+/* --------------------------------------------------------------------------
+   채용 프로세스 (guide 페이지)
+   -------------------------------------------------------------------------- */
+.process-steps {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.process-step__num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-gray);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 15px;
+  border: 2px solid var(--color-border);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.process-step.active .process-step__num,
+.process-step:hover .process-step__num {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.process-step__name {
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark);
+}
+
+.process-step__arrow {
+  color: var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.process-step__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   모집 부문 그리드 (guide 페이지)
+   -------------------------------------------------------------------------- */
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.dept-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.dept-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 100, 218, 0.3);
+}
+
+.dept-card h3 {
+  font-size: 17px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.dept-card p {
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dept-card ul {
+  padding-left: 0;
+}
+
+.dept-card ul li {
+  font-size: 14px;
+  color: var(--color-gray);
+  padding: 5px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.dept-card ul li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   지원 방법 (guide 페이지)
+   -------------------------------------------------------------------------- */
+.apply-info {
+  margin-top: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.apply-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  gap: 24px;
+}
+
+.apply-row:last-child {
+  border-bottom: none;
+}
+
+.apply-row__label {
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark);
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.apply-row span,
+.apply-row a {
+  font-size: 15px;
+  color: var(--color-gray);
+}
+
+.apply-row a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.apply-row a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   견적 폼 레이아웃 (quote 페이지)
+   -------------------------------------------------------------------------- */
+.quote-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+}
+
+/* 폼 그룹 */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 8px;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  transition: border-color var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 100, 218, 0.08);
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7684' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* 2열 입력 행 */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* 필수 항목 표시 */
+.required {
+  color: var(--color-primary);
+}
+
+/* 안내 문구 */
+.form-note {
+  font-size: 13px;
+  color: var(--color-gray);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* 전송 버튼 */
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(27, 100, 218, 0.3);
+  transition: background-color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.form-submit:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 100, 218, 0.4);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(27, 100, 218, 0.2);
+}
+
+/* 연락처 카드 */
+.contact-card {
+  margin-bottom: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 20px 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card:last-child {
+  margin-bottom: 0;
+}
+
+.contact-card h3 {
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-card h3::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: 1.8;
+}
+
+.contact-card a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.contact-card a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* 운영 시간 카드 강조 */
+.contact-card.operating {
+  background-color: rgba(27, 100, 218, 0.03);
+  border-color: rgba(27, 100, 218, 0.2);
+}
+
+/* 섹션 타이틀 여백 (견적 폼 내) */
+.quote-form-wrap .section-title,
+.contact-info .section-title {
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   반응형 — 태블릿 (768px ~ 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .sub-wrapper {
+    padding: 48px 0;
+  }
+
+  /* 2열 → 1열 */
+  .value-grid,
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 3열 → 2열 */
+  .location-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 경영 목표 세로 배치 */
+  .goal-row {
+    flex-direction: column;
+  }
+
+  .goal-item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .goal-item:last-child {
+    border-bottom: none;
+  }
+
+  /* 슬로건 패딩 축소 */
+  .ideology-slogan {
+    padding: 40px 32px;
+  }
+
+  .slogan-text {
+    font-size: 20px;
+  }
+
+  /* 복리후생 3열 → 2열 */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 모집 부문 3열 → 2열 */
+  .dept-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 견적 폼 2단 → 1단 */
+  .quote-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   반응형 — 모바일 (~767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .sub-wrapper {
+    padding: 32px 0;
+  }
+
+  /* 3열/2열 → 1열 */
+  .location-grid,
+  .grades-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 정보 테이블 — th 너비 축소 */
+  .info-table th {
+    width: 100px;
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  .info-table td {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  /* 타임라인 — 연도/내용 세로 배치 */
+  .timeline__item {
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 32px;
+  }
+
+  .timeline__year {
+    font-size: 18px;
+  }
+
+  /* 슬로건 */
+  .ideology-slogan {
+    padding: 32px 20px;
+  }
+
+  .slogan-text {
+    font-size: 17px;
+  }
+
+  /* 경영 목표 */
+  .goal-item {
+    padding: 24px 20px;
+  }
+
+  /* 강종 카드 이름 크기 축소 */
+  .grade-card__name {
+    font-size: 22px;
+  }
+
+  /* 설비 카드 */
+  .grades-cta {
+    padding: 28px 20px;
+  }
+
+  /* 복리후생 / 모집 부문 / 인재상 / 찾아오시는 길 → 1열 */
+  .benefits-grid,
+  .talent-grid,
+  .dept-grid,
+  .direction-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* 지도 플레이스홀더 높이 축소 */
+  .map-placeholder.large {
+    height: 280px;
+  }
+
+  /* 채용 프로세스 세로 배치 */
+  .process-steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .process-step__arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+
+  /* 지원 방법 행 세로 배치 */
+  .apply-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* 견적 폼 2열 행 → 1열 */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
