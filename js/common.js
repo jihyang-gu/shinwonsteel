@@ -301,30 +301,11 @@
    * - .fade-up 요소가 뷰포트에 진입하면 .visible 클래스 추가
    * - threshold: 0.1 (10% 이상 보일 때 트리거)
    */
-  function initScrollAnimation() {
-    // IntersectionObserver 미지원 브라우저 폴백
-    if (!('IntersectionObserver' in window)) {
-      qsa('.fade-up').forEach(function (el) {
-        el.classList.add('visible');
-      });
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // 한 번 표시된 후에는 관찰 해제 (성능 최적화)
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px 0px 0px',
-      }
-    );
+ function initScrollAnimation() {
+  qsa('.fade-up').forEach(function (el) {
+    el.classList.add('visible');
+  });
+}
 
     // 페이지 내 모든 .fade-up 요소 관찰 시작
     qsa('.fade-up').forEach(function (el) {
