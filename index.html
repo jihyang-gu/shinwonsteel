@@ -13,9 +13,6 @@
 </head>
 <body>
 
-  <!-- =====================================================================
-       유틸리티 바
-       ===================================================================== -->
   <div class="util-bar">
     <div class="util-bar__inner">
       <span class="util-bar__item">TEL: 041-411-7800</span>
@@ -23,17 +20,12 @@
     </div>
   </div>
 
-  <!-- =====================================================================
-       GNB (전역 네비게이션 바)
-       ===================================================================== -->
   <header class="gnb" id="gnb">
     <div class="gnb__inner">
-      <!-- 로고 -->
       <a href="index.html" class="gnb__logo" aria-label="신원스틸 홈으로">
         <span class="gnb__logo-text">SHINWON STEEL</span>
       </a>
 
-      <!-- 데스크탑 메뉴 -->
       <nav class="gnb__nav" aria-label="주요 메뉴">
         <ul class="gnb__menu">
           <!-- 회사개요 -->
@@ -41,7 +33,6 @@
             <a href="company/about.html" class="gnb__menu-link">회사개요</a>
             <div class="mega-menu" aria-hidden="true">
               <a href="company/about.html" class="mega-menu__link">회사소개</a>
-              <a href="company/ideology.html" class="mega-menu__link">경영이념</a>
               <a href="company/history.html" class="mega-menu__link">회사연혁</a>
               <a href="company/grades.html" class="mega-menu__link">취급강종</a>
               <a href="company/facility.html" class="mega-menu__link">생산설비</a>
@@ -51,9 +42,8 @@
           <li class="gnb__menu-item">
             <a href="job/guide.html" class="gnb__menu-link">입사지원</a>
             <div class="mega-menu" aria-hidden="true">
-              <a href="job/guide.html" class="mega-menu__link">입사지원 안내</a>
-              <a href="job/system.html" class="mega-menu__link">인사제도의 특성</a>
-              <a href="http://blog.daum.net/shinwonsteel" target="_blank" rel="noopener" class="mega-menu__link">신원가족 블로그</a>
+              <a href="job/guide.html" class="mega-menu__link">입사안내</a>
+              <a href="job/system.html" class="mega-menu__link">인사제도 안내</a>
             </div>
           </li>
           <!-- CONTACT US -->
@@ -61,14 +51,12 @@
             <a href="contact/quote.html" class="gnb__menu-link">CONTACT US</a>
             <div class="mega-menu" aria-hidden="true">
               <a href="contact/quote.html" class="mega-menu__link">견적의뢰</a>
-              <a href="contact/cheonan.html" class="mega-menu__link">천안본사</a>
-              <a href="contact/busan.html" class="mega-menu__link">부산공장</a>
+              <a href="contact/location.html" class="mega-menu__link">본사</a>
             </div>
           </li>
         </ul>
       </nav>
 
-      <!-- GNB 우측 액션 -->
       <div class="gnb__actions">
         <a href="contact/quote.html" class="gnb__cta">견적 의뢰</a>
         <button
@@ -85,9 +73,6 @@
     </div>
   </header>
 
-  <!-- =====================================================================
-       모바일 메뉴
-       ===================================================================== -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="모바일 메뉴" aria-modal="true">
     <nav class="mobile-menu__nav">
       <!-- 회사개요 -->
@@ -100,7 +85,6 @@
         </button>
         <div class="mobile-submenu">
           <a href="company/about.html" class="mobile-submenu__link">회사소개</a>
-          <a href="company/ideology.html" class="mobile-submenu__link">경영이념</a>
           <a href="company/history.html" class="mobile-submenu__link">회사연혁</a>
           <a href="company/grades.html" class="mobile-submenu__link">취급강종</a>
           <a href="company/facility.html" class="mobile-submenu__link">생산설비</a>
@@ -115,9 +99,8 @@
           </svg>
         </button>
         <div class="mobile-submenu">
-          <a href="job/guide.html" class="mobile-submenu__link">입사지원 안내</a>
-          <a href="job/system.html" class="mobile-submenu__link">인사제도의 특성</a>
-          <a href="http://blog.daum.net/shinwonsteel" target="_blank" rel="noopener" class="mobile-submenu__link">신원가족 블로그</a>
+          <a href="job/guide.html" class="mobile-submenu__link">입사안내</a>
+          <a href="job/system.html" class="mobile-submenu__link">인사제도 안내</a>
         </div>
       </div>
       <!-- CONTACT US -->
@@ -130,8 +113,7 @@
         </button>
         <div class="mobile-submenu">
           <a href="contact/quote.html" class="mobile-submenu__link">견적의뢰</a>
-          <a href="contact/cheonan.html" class="mobile-submenu__link">천안본사</a>
-          <a href="contact/busan.html" class="mobile-submenu__link">부산공장</a>
+          <a href="contact/location.html" class="mobile-submenu__link">본사</a>
         </div>
       </div>
     </nav>
@@ -140,19 +122,10 @@
     </div>
   </div>
 
-  <!-- =====================================================================
-       메인 콘텐츠
-       ===================================================================== -->
   <main>
 
-    <!-- =================================================================
-         섹션 1 — 히어로
-         ================================================================= -->
     <section class="hero" aria-label="메인 히어로">
-      <!-- 배경 오버레이 -->
       <div class="hero__bg" aria-hidden="true"></div>
-
-      <!-- 히어로 콘텐츠 -->
       <div class="container hero__content">
         <span class="label">STEEL CUTTING SPECIALIST · SINCE 1990</span>
         <h1>고객과 함께한 35년,<br><em>신뢰의 후판 절단</em></h1>
@@ -162,17 +135,12 @@
           <a href="company/about.html" class="btn btn-outline btn-pill btn-lg">회사 소개</a>
         </div>
       </div>
-
-      <!-- 스크롤 유도 화살표 -->
       <div class="hero__scroll-arrow" role="button" tabindex="0" aria-label="아래로 스크롤">
         <span>SCROLL</span>
         <div class="arrow-anim" aria-hidden="true"></div>
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 2 — 수치 (통계)
-         ================================================================= -->
     <section class="stats" aria-label="주요 수치">
       <div class="container">
         <div class="stats__grid">
@@ -196,20 +164,15 @@
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 3 — 회사소개 (텍스트 좌 / 이미지 우)
-         ================================================================= -->
     <section class="section about-section" aria-labelledby="about-heading">
       <div class="container">
         <div class="two-col">
-          <!-- 텍스트 -->
           <div class="two-col__text fade-up">
             <span class="label">ABOUT US</span>
             <h2 id="about-heading">35년 업력의<br>후판 절단 전문 기업</h2>
             <p>1990년 설립 이래, 열교환기 부품 절단 전문 기업으로서 35년의 업력을 바탕으로 SS400, SM490, A516-70 등 다양한 강종의 정밀 모형 절단 서비스를 제공하고 있습니다.</p>
             <a href="company/about.html" class="text-link">자세히 보기 →</a>
           </div>
-          <!-- 이미지 플레이스홀더 -->
           <div class="two-col__image fade-up" data-delay="200">
             <div class="img-placeholder" role="img" aria-label="회사 전경 이미지 영역"></div>
           </div>
@@ -217,16 +180,12 @@
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 4 — 경영이념 (블루 배경)
-         ================================================================= -->
     <section class="ideology-section" aria-labelledby="ideology-heading">
       <div class="container">
         <span class="label label--white">OUR PHILOSOPHY</span>
         <h2 id="ideology-heading">품질 제일 · 기술 혁신 · 고객 신뢰</h2>
         <p>최고의 품질, 정확한 납기, 합리적인 가격으로 고객과 함께 성장합니다.</p>
         <div class="ideology-cards">
-          <!-- 품질 제일 -->
           <div class="ideology-card fade-up">
             <span class="ideology-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -237,7 +196,6 @@
             <h3>품질 제일</h3>
             <p>ISO 9001 인증 기반의 철저한 품질 관리</p>
           </div>
-          <!-- 기술 혁신 -->
           <div class="ideology-card fade-up" data-delay="200">
             <span class="ideology-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -247,7 +205,6 @@
             <h3>기술 혁신</h3>
             <p>자체 특허 기술로 지속적인 공정 혁신</p>
           </div>
-          <!-- 고객 신뢰 -->
           <div class="ideology-card fade-up" data-delay="400">
             <span class="ideology-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -262,16 +219,11 @@
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 5 — 취급강종 (회색 배경, 3×2 카드)
-         ================================================================= -->
     <section class="section grades-section" aria-labelledby="grades-heading">
       <div class="container">
         <span class="label">STEEL GRADES</span>
         <h2 id="grades-heading">취급 강종</h2>
         <div class="grades-grid">
-
-          <!-- SS400 -->
           <div class="grade-card fade-up">
             <p class="grade-card__name">SS400</p>
             <p class="grade-card__spec">일반 구조용 압연 강재</p>
@@ -283,8 +235,6 @@
               <span class="grade-card__tag">선박</span>
             </div>
           </div>
-
-          <!-- SM490 -->
           <div class="grade-card fade-up" data-delay="100">
             <p class="grade-card__name">SM490</p>
             <p class="grade-card__spec">용접 구조용 압연 강재</p>
@@ -295,8 +245,6 @@
               <span class="grade-card__tag">용접성</span>
             </div>
           </div>
-
-          <!-- A516-70 -->
           <div class="grade-card fade-up" data-delay="200">
             <p class="grade-card__name">A516-70</p>
             <p class="grade-card__spec">압력 용기용 탄소 강재</p>
@@ -307,8 +255,6 @@
               <span class="grade-card__tag">열교환기</span>
             </div>
           </div>
-
-          <!-- A283 -->
           <div class="grade-card fade-up" data-delay="100">
             <p class="grade-card__name">A283</p>
             <p class="grade-card__spec">저탄소 구조용 강재</p>
@@ -319,8 +265,6 @@
               <span class="grade-card__tag">탱크</span>
             </div>
           </div>
-
-          <!-- A36 -->
           <div class="grade-card fade-up" data-delay="200">
             <p class="grade-card__name">A36</p>
             <p class="grade-card__spec">구조용 탄소 강재</p>
@@ -331,8 +275,6 @@
               <span class="grade-card__tag">범용</span>
             </div>
           </div>
-
-          <!-- SLAB -->
           <div class="grade-card fade-up" data-delay="300">
             <p class="grade-card__name">SLAB</p>
             <p class="grade-card__spec">연속 주조 슬라브</p>
@@ -343,22 +285,16 @@
               <span class="grade-card__tag">모형절단</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 6 — 생산설비 (이미지 좌 / 텍스트 우)
-         ================================================================= -->
     <section class="section facility-section" aria-labelledby="facility-heading">
       <div class="container">
         <div class="two-col two-col--reverse">
-          <!-- 이미지 플레이스홀더 -->
           <div class="two-col__image fade-up">
             <div class="img-placeholder" role="img" aria-label="생산설비 이미지 영역"></div>
           </div>
-          <!-- 텍스트 -->
           <div class="two-col__text fade-up" data-delay="200">
             <span class="label">FACILITY</span>
             <h2 id="facility-heading">첨단 생산 설비</h2>
@@ -374,81 +310,48 @@
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 7 — 언론 뉴스
-         ================================================================= -->
     <section class="section news-section" aria-labelledby="news-heading">
       <div class="container">
         <span class="label">MEDIA</span>
         <h2 id="news-heading">언론 속 신원스틸</h2>
         <div class="news-grid">
-
-          <!-- 기사 1 — 국민일보 1991 -->
           <article class="news-card fade-up">
             <div class="news-card__meta">
               <span class="news-card__date">1991.09</span>
               <span class="news-card__source">국민일보</span>
             </div>
             <h3>日기술 따라잡으려면 분업·전문화 시급</h3>
-            <a
-              href="http://newslibrary.naver.com/viewer/index.nhn?articleId=1991091800329117006"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-link"
-              aria-label="국민일보 기사 새 창으로 보기"
-            >기사 보기 →</a>
+            <a href="http://newslibrary.naver.com/viewer/index.nhn?articleId=1991091800329117006" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="국민일보 기사 새 창으로 보기">기사 보기 →</a>
           </article>
-
-          <!-- 기사 2 — MK 2009 -->
           <article class="news-card fade-up" data-delay="200">
             <div class="news-card__meta">
               <span class="news-card__date">2009.05</span>
               <span class="news-card__source">MK</span>
             </div>
             <h3>인식을 전환하는 정책으로 중소기업의 인재난 해결</h3>
-            <a
-              href="http://www.welder.or.kr/Report/SpecialReport2009/Cutiingwork/Interview/Shinwon.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-link"
-              aria-label="MK 기사 새 창으로 보기"
-            >기사 보기 →</a>
+            <a href="http://www.welder.or.kr/Report/SpecialReport2009/Cutiingwork/Interview/Shinwon.html" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="MK 기사 새 창으로 보기">기사 보기 →</a>
           </article>
-
-          <!-- 기사 3 — 스틸데일리 2013 -->
           <article class="news-card fade-up" data-delay="400">
             <div class="news-card__meta">
               <span class="news-card__date">2013.06</span>
               <span class="news-card__source">스틸데일리</span>
             </div>
             <h3>후판시장 불황? 굴하지 않아</h3>
-            <a
-              href="http://www.snmnews.com/news/articleView.html?idxno=309968"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-link"
-              aria-label="스틸데일리 기사 새 창으로 보기"
-            >기사 보기 →</a>
+            <a href="http://www.snmnews.com/news/articleView.html?idxno=309968" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="스틸데일리 기사 새 창으로 보기">기사 보기 →</a>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- =================================================================
-         섹션 8 — CTA + 지도
-         ================================================================= -->
     <section class="section cta-section" aria-labelledby="cta-heading">
       <div class="container">
         <div class="two-col">
-          <!-- 텍스트 -->
           <div class="two-col__text fade-up">
             <span class="label">CONTACT</span>
             <h2 id="cta-heading">견적 및 납기 문의</h2>
             <p>빠른 견적과 정확한 납기를 약속드립니다.<br>전화 또는 온라인으로 편리하게 문의하세요.</p>
             <a href="contact/quote.html" class="btn btn-primary">견적 의뢰하기</a>
           </div>
-          <!-- 지도 플레이스홀더 -->
           <div class="two-col__image fade-up" data-delay="200">
             <div class="map-placeholder" role="img" aria-label="천안본사 위치 지도 영역 (카카오맵 추후 연동)">
               <p>지도 영역<br>(카카오맵 추후 연동)</p>
@@ -460,42 +363,32 @@
 
   </main>
 
-  <!-- =====================================================================
-       푸터
-       ===================================================================== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__top">
-        <!-- 브랜드 -->
         <div class="footer__brand">
           <a href="index.html" class="footer__logo" aria-label="신원스틸 홈으로">SHINWON STEEL</a>
           <p class="footer__slogan">후판 모형 절단 전문 기업<br>Since 1990</p>
         </div>
-
-        <!-- 사이트맵 링크 -->
         <nav class="footer__nav" aria-label="푸터 사이트맵">
           <div class="footer__nav-group">
             <p class="footer__nav-title">회사개요</p>
             <a href="company/about.html" class="footer__nav-link">회사소개</a>
-            <a href="company/ideology.html" class="footer__nav-link">경영이념</a>
             <a href="company/history.html" class="footer__nav-link">회사연혁</a>
             <a href="company/grades.html" class="footer__nav-link">취급강종</a>
             <a href="company/facility.html" class="footer__nav-link">생산설비</a>
           </div>
           <div class="footer__nav-group">
             <p class="footer__nav-title">입사지원</p>
-            <a href="job/guide.html" class="footer__nav-link">입사지원 안내</a>
-            <a href="job/system.html" class="footer__nav-link">인사제도의 특성</a>
+            <a href="job/guide.html" class="footer__nav-link">입사안내</a>
+            <a href="job/system.html" class="footer__nav-link">인사제도 안내</a>
           </div>
           <div class="footer__nav-group">
             <p class="footer__nav-title">CONTACT US</p>
             <a href="contact/quote.html" class="footer__nav-link">견적의뢰</a>
-            <a href="contact/cheonan.html" class="footer__nav-link">천안본사</a>
-            <a href="contact/busan.html" class="footer__nav-link">부산공장</a>
+            <a href="contact/location.html" class="footer__nav-link">본사</a>
           </div>
         </nav>
-
-        <!-- 회사 정보 -->
         <address class="footer__info">
           <p class="footer__info-title">신원스틸(주)</p>
           <div class="footer__address">
@@ -522,17 +415,12 @@
           </div>
         </address>
       </div>
-
-      <!-- 카피라이트 -->
       <div class="footer__bottom">
         <p class="footer__copyright">© 2026 SHINWON STEEL CO., LTD. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- =====================================================================
-       스크립트 로드 (바디 최하단)
-       ===================================================================== -->
   <script src="js/common.js"></script>
   <script src="js/main.js"></script>
 
