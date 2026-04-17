@@ -1,298 +1,73 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회사소개 — 신원스틸(주)</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <meta name="description" content="1990년 설립된 신원스틸(주)의 회사 소개, 연혁, 인증, 파트너사 정보를 확인하세요.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/pages/sub.css">
 </head>
 <body>
+  <header class="gnb" id="gnb"><div class="gnb__inner"><a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a><nav class="gnb__nav"><ul class="gnb__menu"><li class="gnb__menu-item"><a href="../company/about.html" class="gnb__menu-link">회사개요</a><div class="mega-menu" aria-hidden="true"><a href="../company/about.html" class="mega-menu__link">회사소개</a><a href="../company/grades.html" class="mega-menu__link">취급강종</a><a href="../company/facility.html" class="mega-menu__link">생산설비</a><a href="../company/location.html" class="mega-menu__link">오시는길</a></div></li><li class="gnb__menu-item"><a href="../job/guide.html" class="gnb__menu-link">입사안내</a></li><li class="gnb__menu-item"><a href="../contact/quote.html" class="gnb__menu-link">문의하기</a></li></ul></nav><div class="gnb__actions"><a href="../contact/quote.html" class="gnb__cta">견적 의뢰</a><button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu"><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span></button></div></div></header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true"><nav class="mobile-menu__nav"><div class="mobile-menu__item"><button class="mobile-menu__toggle" aria-expanded="false">회사개요<svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="mobile-submenu"><a href="../company/about.html" class="mobile-submenu__link">회사소개</a><a href="../company/grades.html" class="mobile-submenu__link">취급강종</a><a href="../company/facility.html" class="mobile-submenu__link">생산설비</a><a href="../company/location.html" class="mobile-submenu__link">오시는길</a></div></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../job/guide.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">입사안내</a></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../contact/quote.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">문의하기</a></div></nav><div class="mobile-menu__cta"><a href="../contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a></div></div>
 
-  <!-- 유틸리티 바 -->
-  <div class="util-bar">
-    <div class="util-bar__inner">
-      <span class="util-bar__item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
-        </svg>
-        TEL: 041-411-7800
-      </span>
-      <a href="../contact/quote.html" class="util-bar__item">견적 의뢰</a>
-    </div>
-  </div>
+  <div class="page-header"><div class="page-header__inner"><nav class="breadcrumb"><span class="breadcrumb__item"><a href="../index.html">홈</a></span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">회사개요</span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">회사소개</span></nav><h1 class="page-header__title">회사소개</h1><p class="page-header__desc">35년 업력의 후판 절단 전문 기업, 신원스틸(주)</p></div></div>
 
-  <!-- GNB (전역 네비게이션) -->
-  <header class="gnb scrolled" id="gnb">
-    <div class="gnb__inner">
-      <a href="../index.html" class="gnb__logo">
-        <span class="gnb__logo-text">SHINWON STEEL</span>
-      </a>
-      <nav class="gnb__nav" aria-label="주 메뉴">
-        <ul class="gnb__menu">
-          <!-- 회사개요 -->
-          <li class="gnb__menu-item">
-            <a href="about.html" class="gnb__menu-link">회사개요</a>
-            <div class="mega-menu" aria-hidden="true">
-              <a href="about.html" class="mega-menu__link">회사소개</a>
-              <a href="ideology.html" class="mega-menu__link">경영이념</a>
-              <a href="history.html" class="mega-menu__link">회사연혁</a>
-              <a href="grades.html" class="mega-menu__link">취급강종</a>
-              <a href="facility.html" class="mega-menu__link">생산설비</a>
-            </div>
-          </li>
-          <!-- 입사지원 -->
-          <li class="gnb__menu-item">
-            <a href="../job/guide.html" class="gnb__menu-link">입사지원</a>
-            <div class="mega-menu" aria-hidden="true">
-              <a href="../job/guide.html" class="mega-menu__link">입사지원 안내</a>
-              <a href="../job/system.html" class="mega-menu__link">인사제도의 특성</a>
-              <a href="http://blog.daum.net/shinwonsteel" class="mega-menu__link" target="_blank" rel="noopener">신원가족 블로그</a>
-            </div>
-          </li>
-          <!-- CONTACT US -->
-          <li class="gnb__menu-item">
-            <a href="../contact/quote.html" class="gnb__menu-link">CONTACT US</a>
-            <div class="mega-menu" aria-hidden="true">
-              <a href="../contact/quote.html" class="mega-menu__link">견적의뢰</a>
-              <a href="../contact/cheonan.html" class="mega-menu__link">천안본사</a>
-              <a href="../contact/busan.html" class="mega-menu__link">부산공장</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <div class="gnb__actions">
-        <a href="../contact/quote.html" class="gnb__cta btn">견적 의뢰</a>
-        <!-- 햄버거 버튼 (모바일) -->
-        <button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu">
-          <span class="gnb__hamburger-line"></span>
-          <span class="gnb__hamburger-line"></span>
-          <span class="gnb__hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-  </header>
+  <main class="section"><div class="container"><div class="sub-layout">
+    <aside class="sub-nav"><span class="sub-nav__title">회사개요</span><nav class="sub-nav__list"><a href="about.html" class="sub-nav__link">회사소개</a><a href="grades.html" class="sub-nav__link">취급강종</a><a href="facility.html" class="sub-nav__link">생산설비</a><a href="location.html" class="sub-nav__link">오시는길</a></nav></aside>
+    <div class="sub-content">
 
-  <!-- 모바일 메뉴 -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="모바일 메뉴">
-    <nav class="mobile-menu__nav" aria-label="모바일 주 메뉴">
-      <!-- 회사개요 -->
-      <div class="mobile-menu__item">
-        <button class="mobile-menu__toggle" type="button">
-          회사개요
-          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="about.html" class="mobile-submenu__link">회사소개</a></li>
-          <li><a href="ideology.html" class="mobile-submenu__link">경영이념</a></li>
-          <li><a href="history.html" class="mobile-submenu__link">회사연혁</a></li>
-          <li><a href="grades.html" class="mobile-submenu__link">취급강종</a></li>
-          <li><a href="facility.html" class="mobile-submenu__link">생산설비</a></li>
-        </ul>
-      </div>
-      <!-- 입사지원 -->
-      <div class="mobile-menu__item">
-        <button class="mobile-menu__toggle" type="button">
-          입사지원
-          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="../job/guide.html" class="mobile-submenu__link">입사지원 안내</a></li>
-          <li><a href="../job/system.html" class="mobile-submenu__link">인사제도의 특성</a></li>
-          <li><a href="http://blog.daum.net/shinwonsteel" class="mobile-submenu__link" target="_blank" rel="noopener">신원가족 블로그</a></li>
-        </ul>
-      </div>
-      <!-- CONTACT US -->
-      <div class="mobile-menu__item">
-        <button class="mobile-menu__toggle" type="button">
-          CONTACT US
-          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="../contact/quote.html" class="mobile-submenu__link">견적의뢰</a></li>
-          <li><a href="../contact/cheonan.html" class="mobile-submenu__link">천안본사</a></li>
-          <li><a href="../contact/busan.html" class="mobile-submenu__link">부산공장</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="mobile-menu__cta">
-      <a href="../contact/quote.html" class="btn btn-primary" style="width:100%;justify-content:center;">견적 의뢰하기</a>
-    </div>
-  </div>
+      <section>
+        <h2 class="section-title">회사 기본 정보</h2>
+        <table class="info-table"><tbody>
+          <tr><th>회사명</th><td>신원스틸(주)</td></tr>
+          <tr><th>설립</th><td>1990년 5월 23일 (일본 합작기업)</td></tr>
+          <tr><th>대표이사</th><td>하태진</td></tr>
+          <tr><th>주요사업</th><td>후판 모형 절단 (열교환기 부품 등)</td></tr>
+          <tr><th>본사</th><td>충남 천안시 서북구 성환읍 신방로 108 (우31007)</td></tr>
+          <tr><th>연락처</th><td>041-411-7800 / shinwonjm@hanmail.net</td></tr>
+          <tr><th>모회사</th><td>버넥트(VIRNECT) — 코스닥 상장사</td></tr>
+          <tr><th>신용등급</th><td>A (우량)</td></tr>
+        </tbody></table>
+      </section>
 
-  <!-- 페이지 헤더 -->
-  <div class="page-header">
-    <div class="page-header__inner">
-      <!-- 브레드크럼 -->
-      <nav class="breadcrumb" aria-label="현재 위치">
-        <span class="breadcrumb__item"><a href="../index.html">HOME</a></span>
-        <span class="breadcrumb__separator" aria-hidden="true">›</span>
-        <span class="breadcrumb__item"><a href="about.html">회사개요</a></span>
-        <span class="breadcrumb__separator" aria-hidden="true">›</span>
-        <span class="breadcrumb__item">회사소개</span>
-      </nav>
-      <h1 class="page-header__title">회사소개</h1>
-      <p class="page-header__desc">신원스틸(주)의 기업 정보를 소개합니다</p>
-    </div>
-  </div>
-
-  <!-- 서브 본문 레이아웃 -->
-  <div class="sub-wrapper">
-    <div class="container">
-      <div class="sub-layout">
-
-        <!-- 좌측 서브 네비게이션 -->
-        <aside class="sub-nav" aria-label="회사개요 하위 메뉴">
-          <strong class="sub-nav__title">회사개요</strong>
-          <ul class="sub-nav__list">
-            <li><a href="about.html" class="sub-nav__link active" aria-current="page">회사소개</a></li>
-            <li><a href="ideology.html" class="sub-nav__link">경영이념</a></li>
-            <li><a href="history.html" class="sub-nav__link">회사연혁</a></li>
-            <li><a href="grades.html" class="sub-nav__link">취급강종</a></li>
-            <li><a href="facility.html" class="sub-nav__link">생산설비</a></li>
-          </ul>
-        </aside>
-
-        <!-- 우측 본문 -->
-        <main class="sub-content" id="main-content">
-
-          <!-- 회사 개요 테이블 -->
-          <section class="company-info fade-up" aria-labelledby="section-info">
-            <h2 class="section-title" id="section-info">회사 개요</h2>
-            <table class="info-table">
-              <caption class="sr-only">신원스틸(주) 회사 기본 정보</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">회사명</th>
-                  <td>신원스틸(주)</td>
-                </tr>
-                <tr>
-                  <th scope="row">설립일</th>
-                  <td>1990. 05. 23</td>
-                </tr>
-                <tr>
-                  <th scope="row">대표이사</th>
-                  <td>신동원</td>
-                </tr>
-                <tr>
-                  <th scope="row">주요사업</th>
-                  <td>후판 모형 절단 (열교환기 부품)</td>
-                </tr>
-                <tr>
-                  <th scope="row">종업원수</th>
-                  <td>21명</td>
-                </tr>
-                <tr>
-                  <th scope="row">인증</th>
-                  <td>ISO 9001</td>
-                </tr>
-                <tr>
-                  <th scope="row">본사</th>
-                  <td>충남 천안시 서북구 성환읍 신방로 108</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-
-          <!-- 사업장 현황 -->
-          <section class="locations fade-up" aria-labelledby="section-locations" data-delay="100">
-            <h2 class="section-title" id="section-locations">사업장 현황</h2>
-            <div class="location-grid">
-              <!-- 천안 본사 -->
-              <div class="card location-card">
-                <h3>천안 본사</h3>
-                <p>충남 천안시 서북구 성환읍 신방로 108</p>
-                <p>TEL: 041-411-7800</p>
-              </div>
-              <!-- 부산 공장 -->
-              <div class="card location-card">
-                <h3>부산 공장</h3>
-                <p>경남 김해시 한림면 고모로 782-28</p>
-                <p>TEL: 055-342-7845</p>
-              </div>
-              <!-- 안산 지점 -->
-              <div class="card location-card">
-                <h3>안산 지점</h3>
-                <p>경기 안산 소재</p>
-              </div>
-            </div>
-          </section>
-
-        </main>
-      </div>
-    </div>
-  </div>
-
-  <!-- 푸터 -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__top">
-        <!-- 브랜드 -->
-        <div class="footer__brand">
-          <a href="../index.html" class="footer__logo">SHINWON STEEL</a>
-          <p class="footer__slogan">후판 모형 절단 전문 기업</p>
+      <section>
+        <h2 class="section-title">인증 · 특허 · 선정</h2>
+        <div class="value-grid">
+          <div class="value-card"><div class="value-card__num">01</div><h3>ISO 9001<em>국제 품질경영시스템 인증</em></h3><p>2001년 최초 취득. 전 공정의 품질 관리 체계를 보증합니다.</p></div>
+          <div class="value-card"><div class="value-card__num">02</div><h3>부품·소재전문기업<em>산업통상자원부 인증</em></h3><p>2011년 취득. 소재 분야 핵심 전문 기업으로 인증받았습니다.</p></div>
+          <div class="value-card"><div class="value-card__num">03</div><h3>특허 2건<em>피어싱 공업(2001) · 절단기 하부 정반(2019)</em></h3><p>독자적인 가공 기술을 특허로 보호하여 기술 경쟁력을 강화하고 있습니다.</p></div>
+          <div class="value-card"><div class="value-card__num">04</div><h3>강소기업 선정<em>경영혁신형 중소기업 (중소기업청)</em></h3><p>2006년 경영혁신형 중소기업 선정. 기업부설연구소 보유로 R&D 역량을 갖추고 있습니다.</p></div>
         </div>
-        <!-- 사이트맵 -->
-        <nav class="footer__nav" aria-label="푸터 메뉴">
-          <div class="footer__nav-group">
-            <strong class="footer__nav-title">회사개요</strong>
-            <a href="about.html" class="footer__nav-link">회사소개</a>
-            <a href="ideology.html" class="footer__nav-link">경영이념</a>
-            <a href="history.html" class="footer__nav-link">회사연혁</a>
-            <a href="grades.html" class="footer__nav-link">취급강종</a>
-            <a href="facility.html" class="footer__nav-link">생산설비</a>
-          </div>
-          <div class="footer__nav-group">
-            <strong class="footer__nav-title">입사지원</strong>
-            <a href="../job/guide.html" class="footer__nav-link">입사지원 안내</a>
-            <a href="../job/system.html" class="footer__nav-link">인사제도의 특성</a>
-          </div>
-          <div class="footer__nav-group">
-            <strong class="footer__nav-title">CONTACT US</strong>
-            <a href="../contact/quote.html" class="footer__nav-link">견적의뢰</a>
-            <a href="../contact/cheonan.html" class="footer__nav-link">천안본사</a>
-            <a href="../contact/busan.html" class="footer__nav-link">부산공장</a>
-          </div>
-        </nav>
-        <!-- 회사 정보 -->
-        <div class="footer__info">
-          <strong class="footer__info-title">신원스틸(주)</strong>
-          <address class="footer__address">
-            <p class="footer__address-item">
-              <span class="footer__address-label">주소</span>
-              <span class="footer__address-value">충남 천안시 서북구 성환읍 신방로 108 (우31007)</span>
-            </p>
-            <p class="footer__address-item">
-              <span class="footer__address-label">TEL</span>
-              <span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span>
-            </p>
-            <p class="footer__address-item">
-              <span class="footer__address-label">FAX</span>
-              <span class="footer__address-value">041-581-2600</span>
-            </p>
-            <p class="footer__address-item">
-              <span class="footer__address-label">Email</span>
-              <span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span>
-            </p>
-          </address>
-        </div>
-      </div>
-      <!-- 카피라이트 -->
-      <div class="footer__bottom">
-        <p class="footer__copyright">© 2026 SHINWON STEEL CO., LTD. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+      </section>
 
+      <section>
+        <h2 class="section-title">회사 연혁</h2>
+        <div class="timeline">
+          <div class="timeline__item"><span class="timeline__year">2025</span><div class="timeline__content"><span class="timeline__date">10월</span><p>버넥트(VIRNECT) 코스닥 상장 자회사 편입 — AI·DX 스마트팩토리 혁신 추진</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">2019</span><div class="timeline__content"><span class="timeline__date">04월</span><p>절단기 하부 정반 시스템 특허 등록</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">2016</span><div class="timeline__content"><span class="timeline__date">01월</span><p>성환공장 신축 이전 (현 본사)</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">2011</span><div class="timeline__content"><p>부품·소재전문기업 인증 획득</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">2007</span><div class="timeline__content"><p>경인지역 제2공장 가동개시 (안산 시화공단)</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">2006</span><div class="timeline__content"><p>상호를 "신원스틸(주)"로 변경 / 경영혁신형 중소기업 선정</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">2001</span><div class="timeline__content"><p>ISO 9001 인증 획득 / 피어싱 공업 특허 출원 / 신한은행 유망중소기업 선정</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">1990</span><div class="timeline__content"><span class="timeline__date">05월</span><p>신원스틸 성환공장 설립 — 일본 Maehara社(49%) 합작기업으로 창업</p></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">파트너사</h2>
+        <div class="location-grid">
+          <div class="location-card"><h3>300스틸</h3><p>국내 철강 유통 파트너사<br><a href="https://www.300steel.com" target="_blank" rel="noopener" style="color:var(--color-primary)">www.300steel.com →</a></p></div>
+          <div class="location-card"><h3>마에하라 (Maehara)</h3><p>일본 합작 파트너사 (60년 역사)<br><a href="https://www.maehara-web.co.jp" target="_blank" rel="noopener" style="color:var(--color-primary)">www.maehara-web.co.jp →</a></p></div>
+        </div>
+      </section>
+
+    </div>
+  </div></div></main>
+
+  <footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="../index.html" class="footer__logo">SHINWON STEEL</a><p class="footer__slogan">후판 모형 절단 전문 기업<br>Since 1990</p></div><nav class="footer__nav"><div class="footer__nav-group"><p class="footer__nav-title">회사개요</p><a href="../company/about.html" class="footer__nav-link">회사소개</a><a href="../company/grades.html" class="footer__nav-link">취급강종</a><a href="../company/facility.html" class="footer__nav-link">생산설비</a><a href="../company/location.html" class="footer__nav-link">오시는길</a></div><div class="footer__nav-group"><p class="footer__nav-title">채용/문의</p><a href="../job/guide.html" class="footer__nav-link">입사안내</a><a href="../contact/quote.html" class="footer__nav-link">문의하기</a></div><div class="footer__nav-group"><p class="footer__nav-title">파트너사</p><a href="https://www.300steel.com" target="_blank" rel="noopener" class="footer__nav-link">300스틸</a><a href="https://www.maehara-web.co.jp" target="_blank" rel="noopener" class="footer__nav-link">마에하라</a></div></nav><address class="footer__info"><p class="footer__info-title">신원스틸(주)</p><div class="footer__address"><div class="footer__address-item"><span class="footer__address-label">대표</span><span class="footer__address-value">하태진</span></div><div class="footer__address-item"><span class="footer__address-label">주소</span><span class="footer__address-value">충남 천안시 서북구 성환읍 신방로 108</span></div><div class="footer__address-item"><span class="footer__address-label">TEL</span><span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span></div><div class="footer__address-item"><span class="footer__address-label">FAX</span><span class="footer__address-value">041-581-2600</span></div><div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div><div class="footer__address-item"><span class="footer__address-label">인증</span><span class="footer__address-value">ISO 9001 · 부품·소재전문기업</span></div></div></address></div><div class="footer__bottom"><p class="footer__copyright">© 2026 SHINWON STEEL CO., LTD. All Rights Reserved.</p><div class="footer__bottom-links"><a href="../privacy.html" class="footer__bottom-link">개인정보처리방침</a><a href="../terms.html" class="footer__bottom-link">이용약관</a></div></div></div></footer>
   <script src="../js/common.js"></script>
-</body>
-</html>
+</body></html>
