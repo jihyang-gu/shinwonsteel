@@ -1,340 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>생산설비 — 신원스틸(주)</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <meta name="description" content="신원스틸(주) 스마트팩토리 기반 생산설비: NC 가스 절단기, 플라즈마 절단기, 대형 평탄도 교정설비 등을 보유하고 있습니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/pages/sub.css">
+  <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
 </head>
 <body>
+  <header class="gnb" id="gnb"><div class="gnb__inner"><a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a><nav class="gnb__nav"><ul class="gnb__menu"><li class="gnb__menu-item"><a href="../company/about.html" class="gnb__menu-link">회사개요</a><div class="mega-menu" aria-hidden="true"><a href="../company/about.html" class="mega-menu__link">회사소개</a><a href="../company/grades.html" class="mega-menu__link">취급강종</a><a href="../company/facility.html" class="mega-menu__link">생산설비</a><a href="../company/location.html" class="mega-menu__link">오시는길</a></div></li><li class="gnb__menu-item"><a href="../job/guide.html" class="gnb__menu-link">입사안내</a></li><li class="gnb__menu-item"><a href="../contact/quote.html" class="gnb__menu-link">문의하기</a></li></ul></nav><div class="gnb__actions"><a href="../contact/quote.html" class="gnb__cta">견적 의뢰</a><button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu"><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span></button></div></div></header>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true"><nav class="mobile-menu__nav"><div class="mobile-menu__item"><button class="mobile-menu__toggle" aria-expanded="false">회사개요<svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="mobile-submenu"><a href="../company/about.html" class="mobile-submenu__link">회사소개</a><a href="../company/grades.html" class="mobile-submenu__link">취급강종</a><a href="../company/facility.html" class="mobile-submenu__link">생산설비</a><a href="../company/location.html" class="mobile-submenu__link">오시는길</a></div></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../job/guide.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">입사안내</a></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../contact/quote.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">문의하기</a></div></nav><div class="mobile-menu__cta"><a href="../contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a></div></div>
 
-  <!-- 유틸리티 바 -->
-  <div class="util-bar">
-    <div class="util-bar__inner">
-      <span class="util-bar__item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
-        </svg>
-        TEL: 041-411-7800
-      </span>
-      <a href="../contact/quote.html" class="util-bar__item">견적 의뢰</a>
-    </div>
-  </div>
+  <div class="page-header"><div class="page-header__inner"><nav class="breadcrumb"><span class="breadcrumb__item"><a href="../index.html">홈</a></span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">회사개요</span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">생산설비</span></nav><h1 class="page-header__title">생산설비</h1><p class="page-header__desc">스마트팩토리 기반의 정밀 가공 설비</p></div></div>
 
-  <!-- GNB (전역 네비게이션) -->
-  <header class="gnb scrolled" id="gnb">
-    <div class="gnb__inner">
-      <a href="../index.html" class="gnb__logo">
-        <span class="gnb__logo-text">SHINWON STEEL</span>
-      </a>
-      <nav class="gnb__nav" aria-label="주 메뉴">
-        <ul class="gnb__menu">
-          <!-- 회사개요 -->
-          <li class="gnb__menu-item">
-            <a href="about.html" class="gnb__menu-link">회사개요</a>
-            <div class="mega-menu" aria-hidden="true">
-              <a href="about.html" class="mega-menu__link">회사소개</a>
-              <a href="ideology.html" class="mega-menu__link">경영이념</a>
-              <a href="history.html" class="mega-menu__link">회사연혁</a>
-              <a href="grades.html" class="mega-menu__link">취급강종</a>
-              <a href="facility.html" class="mega-menu__link">생산설비</a>
-            </div>
-          </li>
-          <!-- 입사지원 -->
-          <li class="gnb__menu-item">
-            <a href="../job/guide.html" class="gnb__menu-link">입사지원</a>
-            <div class="mega-menu" aria-hidden="true">
-              <a href="../job/guide.html" class="mega-menu__link">입사지원 안내</a>
-              <a href="../job/system.html" class="mega-menu__link">인사제도의 특성</a>
-              <a href="http://blog.daum.net/shinwonsteel" class="mega-menu__link" target="_blank" rel="noopener">신원가족 블로그</a>
-            </div>
-          </li>
-          <!-- CONTACT US -->
-          <li class="gnb__menu-item">
-            <a href="../contact/quote.html" class="gnb__menu-link">CONTACT US</a>
-            <div class="mega-menu" aria-hidden="true">
-              <a href="../contact/quote.html" class="mega-menu__link">견적의뢰</a>
-              <a href="../contact/cheonan.html" class="mega-menu__link">천안본사</a>
-              <a href="../contact/busan.html" class="mega-menu__link">부산공장</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <div class="gnb__actions">
-        <a href="../contact/quote.html" class="gnb__cta btn">견적 의뢰</a>
-        <!-- 햄버거 버튼 (모바일) -->
-        <button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu">
-          <span class="gnb__hamburger-line"></span>
-          <span class="gnb__hamburger-line"></span>
-          <span class="gnb__hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- 모바일 메뉴 -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="모바일 메뉴">
-    <nav class="mobile-menu__nav" aria-label="모바일 주 메뉴">
-      <!-- 회사개요 -->
-      <div class="mobile-menu__item">
-        <button class="mobile-menu__toggle" type="button">
-          회사개요
-          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="about.html" class="mobile-submenu__link">회사소개</a></li>
-          <li><a href="ideology.html" class="mobile-submenu__link">경영이념</a></li>
-          <li><a href="history.html" class="mobile-submenu__link">회사연혁</a></li>
-          <li><a href="grades.html" class="mobile-submenu__link">취급강종</a></li>
-          <li><a href="facility.html" class="mobile-submenu__link">생산설비</a></li>
-        </ul>
-      </div>
-      <!-- 입사지원 -->
-      <div class="mobile-menu__item">
-        <button class="mobile-menu__toggle" type="button">
-          입사지원
-          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="../job/guide.html" class="mobile-submenu__link">입사지원 안내</a></li>
-          <li><a href="../job/system.html" class="mobile-submenu__link">인사제도의 특성</a></li>
-          <li><a href="http://blog.daum.net/shinwonsteel" class="mobile-submenu__link" target="_blank" rel="noopener">신원가족 블로그</a></li>
-        </ul>
-      </div>
-      <!-- CONTACT US -->
-      <div class="mobile-menu__item">
-        <button class="mobile-menu__toggle" type="button">
-          CONTACT US
-          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="../contact/quote.html" class="mobile-submenu__link">견적의뢰</a></li>
-          <li><a href="../contact/cheonan.html" class="mobile-submenu__link">천안본사</a></li>
-          <li><a href="../contact/busan.html" class="mobile-submenu__link">부산공장</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="mobile-menu__cta">
-      <a href="../contact/quote.html" class="btn btn-primary" style="width:100%;justify-content:center;">견적 의뢰하기</a>
-    </div>
-  </div>
-
-  <!-- 페이지 헤더 -->
-  <div class="page-header">
-    <div class="page-header__inner">
-      <!-- 브레드크럼 -->
-      <nav class="breadcrumb" aria-label="현재 위치">
-        <span class="breadcrumb__item"><a href="../index.html">HOME</a></span>
-        <span class="breadcrumb__separator" aria-hidden="true">›</span>
-        <span class="breadcrumb__item"><a href="about.html">회사개요</a></span>
-        <span class="breadcrumb__separator" aria-hidden="true">›</span>
-        <span class="breadcrumb__item">생산설비</span>
-      </nav>
-      <h1 class="page-header__title">생산설비</h1>
-      <p class="page-header__desc">최첨단 절단 설비와 검사 장비로 정밀한 품질을 구현합니다</p>
-    </div>
-  </div>
-
-  <!-- 서브 본문 레이아웃 -->
-  <div class="sub-wrapper">
-    <div class="container">
-      <div class="sub-layout">
-
-        <!-- 좌측 서브 네비게이션 -->
-        <aside class="sub-nav" aria-label="회사개요 하위 메뉴">
-          <strong class="sub-nav__title">회사개요</strong>
-          <ul class="sub-nav__list">
-            <li><a href="about.html" class="sub-nav__link">회사소개</a></li>
-            <li><a href="ideology.html" class="sub-nav__link">경영이념</a></li>
-            <li><a href="history.html" class="sub-nav__link">회사연혁</a></li>
-            <li><a href="grades.html" class="sub-nav__link">취급강종</a></li>
-            <li><a href="facility.html" class="sub-nav__link active" aria-current="page">생산설비</a></li>
-          </ul>
-        </aside>
-
-        <!-- 우측 본문 -->
-        <main class="sub-content" id="main-content">
-
-          <!-- 절단 설비 섹션 -->
-          <section aria-labelledby="section-cutting">
-            <h2 class="section-title fade-up" id="section-cutting">절단 설비</h2>
-            <div class="facility-grid fade-up" data-delay="100">
-
-              <!-- NC 가스 절단기 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">01</div>
-                <h3>NC 가스 절단기</h3>
-                <p>컴퓨터 수치 제어(CNC) 방식으로 복잡한 모형도 정밀하게 절단합니다.</p>
-                <ul>
-                  <li>최대 절단 두께: 200mm</li>
-                  <li>절단 정밀도: ±0.5mm</li>
-                </ul>
-              </div>
-
-              <!-- 플라즈마 절단기 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">02</div>
-                <h3>플라즈마 절단기</h3>
-                <p>고정밀 플라즈마 열 절단으로 비철금속도 가공 가능합니다.</p>
-                <ul>
-                  <li>절단 속도: 고속 절단 가능</li>
-                  <li>비철금속 가공 가능</li>
-                </ul>
-              </div>
-
-              <!-- 피어싱 가공 설비 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">03</div>
-                <h3>피어싱 가공 설비</h3>
-                <p>자체 특허 보유 설비로 후판에 정밀한 홀 가공을 수행합니다.</p>
-                <ul>
-                  <li>특허 등록 (2001년)</li>
-                  <li>다양한 홀 규격 가공</li>
-                </ul>
-              </div>
-
-              <!-- 하부 정반 시스템 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">04</div>
-                <h3>하부 정반 시스템</h3>
-                <p>2019년 특허 등록된 자체 개발 정반으로 절단 정밀도를 획기적으로 향상시켰습니다.</p>
-                <ul>
-                  <li>특허 등록 (2019년)</li>
-                  <li>절단 변형 최소화</li>
-                </ul>
-              </div>
-
-            </div>
-          </section>
-
-          <!-- 검사·후처리 설비 섹션 -->
-          <section aria-labelledby="section-inspection">
-            <h2 class="section-title fade-up" id="section-inspection">검사·후처리 설비</h2>
-            <div class="facility-grid fade-up" data-delay="100">
-
-              <!-- 치수 검사 장비 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">01</div>
-                <h3>치수 검사 장비</h3>
-                <p>절단 완료품의 치수를 정밀 계측하여 도면 규격 적합 여부를 검증합니다.</p>
-                <ul>
-                  <li>디지털 버니어 캘리퍼 적용</li>
-                  <li>전수 검사 체계 운영</li>
-                </ul>
-              </div>
-
-              <!-- 표면 처리 설비 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">02</div>
-                <h3>표면 처리 설비</h3>
-                <p>절단면 버(Burr) 제거 및 표면 그라인딩으로 청결한 납품 품질을 보장합니다.</p>
-                <ul>
-                  <li>그라인더 후처리</li>
-                  <li>버 제거 전처리</li>
-                </ul>
-              </div>
-
-              <!-- 크레인·이송 설비 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">03</div>
-                <h3>크레인·이송 설비</h3>
-                <p>대형 후판 소재를 안전하게 취급·이송하는 천장 크레인 설비를 운영합니다.</p>
-                <ul>
-                  <li>천장 크레인 다수 보유</li>
-                  <li>대형 후판 안전 취급</li>
-                </ul>
-              </div>
-
-              <!-- 원자재 보관 시설 -->
-              <div class="card facility-card">
-                <div class="facility-card__num" aria-hidden="true">04</div>
-                <h3>원자재 보관 시설</h3>
-                <p>다양한 강종의 후판 원자재를 체계적으로 분류·보관하여 신속한 수주 대응이 가능합니다.</p>
-                <ul>
-                  <li>강종별 분류 보관</li>
-                  <li>재고 관리 시스템 운영</li>
-                </ul>
-              </div>
-
-            </div>
-          </section>
-
-        </main>
-      </div>
-    </div>
-  </div>
-
-  <!-- 푸터 -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__top">
-        <!-- 브랜드 -->
-        <div class="footer__brand">
-          <a href="../index.html" class="footer__logo">SHINWON STEEL</a>
-          <p class="footer__slogan">후판 모형 절단 전문 기업</p>
+  <main class="section"><div class="container"><div class="sub-layout">
+    <aside class="sub-nav"><span class="sub-nav__title">회사개요</span><nav class="sub-nav__list"><a href="about.html" class="sub-nav__link">회사소개</a><a href="grades.html" class="sub-nav__link">취급강종</a><a href="facility.html" class="sub-nav__link">생산설비</a><a href="location.html" class="sub-nav__link">오시는길</a></nav></aside>
+    <div class="sub-content">
+      <section>
+        <h2 class="section-title">스마트팩토리 기반 생산 역량</h2>
+        <div style="background:linear-gradient(135deg,#0a0f1e,#111827);border-radius:var(--border-radius-lg);padding:40px;margin-bottom:40px;color:#fff;">
+          <p style="font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:12px;">SMART FACTORY</p>
+          <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.4;color:#fff;">버넥트(VIRNECT) 기술 기반 AI·DX 스마트팩토리 전환 추진 중</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8;">AI 영상인식 품질 관리, 디지털 트윈 납기 예측, AR 원격 협업 시스템을 도입하여 품질·납기·안전을 한 단계 높이고 있습니다.</p>
         </div>
-        <!-- 사이트맵 -->
-        <nav class="footer__nav" aria-label="푸터 메뉴">
-          <div class="footer__nav-group">
-            <strong class="footer__nav-title">회사개요</strong>
-            <a href="about.html" class="footer__nav-link">회사소개</a>
-            <a href="ideology.html" class="footer__nav-link">경영이념</a>
-            <a href="history.html" class="footer__nav-link">회사연혁</a>
-            <a href="grades.html" class="footer__nav-link">취급강종</a>
-            <a href="facility.html" class="footer__nav-link">생산설비</a>
-          </div>
-          <div class="footer__nav-group">
-            <strong class="footer__nav-title">입사지원</strong>
-            <a href="../job/guide.html" class="footer__nav-link">입사지원 안내</a>
-            <a href="../job/system.html" class="footer__nav-link">인사제도의 특성</a>
-          </div>
-          <div class="footer__nav-group">
-            <strong class="footer__nav-title">CONTACT US</strong>
-            <a href="../contact/quote.html" class="footer__nav-link">견적의뢰</a>
-            <a href="../contact/cheonan.html" class="footer__nav-link">천안본사</a>
-            <a href="../contact/busan.html" class="footer__nav-link">부산공장</a>
-          </div>
-        </nav>
-        <!-- 회사 정보 -->
-        <div class="footer__info">
-          <strong class="footer__info-title">신원스틸(주)</strong>
-          <address class="footer__address">
-            <p class="footer__address-item">
-              <span class="footer__address-label">주소</span>
-              <span class="footer__address-value">충남 천안시 서북구 성환읍 신방로 108 (우31007)</span>
-            </p>
-            <p class="footer__address-item">
-              <span class="footer__address-label">TEL</span>
-              <span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span>
-            </p>
-            <p class="footer__address-item">
-              <span class="footer__address-label">FAX</span>
-              <span class="footer__address-value">041-581-2600</span>
-            </p>
-            <p class="footer__address-item">
-              <span class="footer__address-label">Email</span>
-              <span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span>
-            </p>
-          </address>
+        <div class="facility-grid">
+          <div class="facility-card"><div class="facility-card__num">01</div><h3>NC 가스 절단기</h3><p>컴퓨터 수치 제어(NC) 방식의 정밀 모형 절단. 복잡한 형상도 정확하게 가공하여 고객 도면에 맞는 제품을 생산합니다.</p></div>
+          <div class="facility-card"><div class="facility-card__num">02</div><h3>플라즈마 절단기</h3><p>산소/질소 플라즈마를 이용한 고정밀 열 절단. 스테인리스 철판 등 다양한 소재 절단이 가능합니다.</p></div>
+          <div class="facility-card"><div class="facility-card__num">03</div><h3>대형 평탄도 교정설비</h3><p>후판 소재의 휨·변형을 교정하는 대형 롤러 교정기. 정밀 가공 전 소재 평탄도를 보증합니다.</p></div>
+          <div class="facility-card"><div class="facility-card__num">04</div><h3>피어싱 가공 설비 <span class="badge">특허 보유</span></h3><p>자체 특허 기술이 적용된 후판 홀 가공 설비. 드릴(DRILL) 및 탭(TAP) 작업까지 일괄 처리합니다.</p></div>
+          <div class="facility-card"><div class="facility-card__num">05</div><h3>하부 정반 시스템 <span class="badge">2019 특허</span></h3><p>2019년 특허 등록. 절단 작업 시 정반 시스템을 통해 정밀도를 향상시키는 독자 개발 설비입니다.</p></div>
         </div>
-      </div>
-      <!-- 카피라이트 -->
-      <div class="footer__bottom">
-        <p class="footer__copyright">© 2026 SHINWON STEEL CO., LTD. All Rights Reserved.</p>
-      </div>
+      </section>
+      <section>
+        <h2 class="section-title">가공 능력</h2>
+        <table class="info-table"><tbody>
+          <tr><th>월 가공능력</th><td>약 1,500톤</td></tr>
+          <tr><th>가공 두께</th><td>300mm 이하 후판 (일부 100t 이상 대응)</td></tr>
+          <tr><th>납기</th><td>1~3주 단납기 대응</td></tr>
+          <tr><th>특수 가공</th><td>요구 SIZE 주문 · 모형절단 · 스테인리스 절단</td></tr>
+        </tbody></table>
+      </section>
     </div>
-  </footer>
+  </div></div></main>
 
+  <footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="../index.html" class="footer__logo">SHINWON STEEL</a><p class="footer__slogan">후판 모형 절단 전문 기업<br>Since 1990</p></div><nav class="footer__nav"><div class="footer__nav-group"><p class="footer__nav-title">회사개요</p><a href="../company/about.html" class="footer__nav-link">회사소개</a><a href="../company/grades.html" class="footer__nav-link">취급강종</a><a href="../company/facility.html" class="footer__nav-link">생산설비</a><a href="../company/location.html" class="footer__nav-link">오시는길</a></div><div class="footer__nav-group"><p class="footer__nav-title">채용/문의</p><a href="../job/guide.html" class="footer__nav-link">입사안내</a><a href="../contact/quote.html" class="footer__nav-link">문의하기</a></div></nav><address class="footer__info"><p class="footer__info-title">신원스틸(주)</p><div class="footer__address"><div class="footer__address-item"><span class="footer__address-label">TEL</span><span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span></div><div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div></div></address></div><div class="footer__bottom"><p class="footer__copyright">© 2026 SHINWON STEEL CO., LTD. All Rights Reserved.</p><div class="footer__bottom-links"><a href="../privacy.html" class="footer__bottom-link">개인정보처리방침</a><a href="../terms.html" class="footer__bottom-link">이용약관</a></div></div></div></footer>
   <script src="../js/common.js"></script>
-</body>
-</html>
+</body></html>
