@@ -6,6 +6,27 @@
   <meta name="description" content="신원스틸(주) 채용 안내. 후판 가공 전문 기업에서 함께 성장할 인재를 찾습니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
+  <style>
+    .recruit-table { width:100%; border-collapse:collapse; margin-bottom:40px; font-size:14px; }
+    .recruit-table th, .recruit-table td { border:1px solid var(--color-border); padding:12px 16px; vertical-align:top; line-height:1.7; text-align:left; }
+    .recruit-table th { background:var(--color-bg-light); font-weight:700; color:var(--color-dark); white-space:nowrap; width:120px; }
+    .recruit-table td { color:var(--color-gray); }
+    .recruit-table tr:first-child th, .recruit-table tr:first-child td { border-top:2px solid var(--color-dark); }
+    .recruit-table ol { padding-left:18px; margin:0; }
+    .recruit-table ol li { margin-bottom:4px; }
+    .recruit-table .sub-th { background:#f8f9fa; font-weight:600; color:var(--color-gray); }
+    .salary-table { width:100%; border-collapse:collapse; font-size:14px; margin-bottom:8px; }
+    .salary-table th, .salary-table td { border:1px solid var(--color-border); padding:10px 14px; text-align:center; }
+    .salary-table thead th { background:var(--color-bg-light); font-weight:700; color:var(--color-dark); }
+    .salary-table tbody td { color:var(--color-gray); }
+    .salary-table tr:first-child th { border-top:2px solid var(--color-dark); }
+    .section-box { background:var(--color-bg-light); border-radius:var(--border-radius-lg); padding:28px 32px; margin-bottom:40px; }
+    .section-box ul { padding-left:0; list-style:none; }
+    .section-box ul li { padding:5px 0 5px 18px; position:relative; color:var(--color-gray); font-size:14px; line-height:1.7; }
+    .section-box ul li::before { content:''; position:absolute; left:0; top:13px; width:6px; height:6px; border-radius:50%; background:var(--color-primary); }
+    .btn-green { display:inline-flex; align-items:center; justify-content:center; padding:12px 28px; background:#3a8c5a; color:#fff; border-radius:var(--border-radius-md); font-size:14px; font-weight:600; text-decoration:none; transition:background 0.15s; }
+    .btn-green:hover { background:#2d7048; }
+  </style>
 </head>
 <body>
   <header class="gnb" id="gnb"><div class="gnb__inner"><a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a><nav class="gnb__nav"><ul class="gnb__menu"><li class="gnb__menu-item"><a href="../company/about.html" class="gnb__menu-link">회사개요</a><div class="mega-menu" aria-hidden="true"><a href="../company/about.html" class="mega-menu__link">회사소개</a><a href="../company/grades.html" class="mega-menu__link">취급강종</a><a href="../company/facility.html" class="mega-menu__link">생산설비</a><a href="../company/location.html" class="mega-menu__link">오시는길</a></div></li><li class="gnb__menu-item"><a href="../job/guide.html" class="gnb__menu-link">입사안내</a></li><li class="gnb__menu-item"><a href="../contact/quote.html" class="gnb__menu-link">문의하기</a></li></ul></nav><div class="gnb__actions"><a href="../contact/quote.html" class="gnb__cta">견적문의</a><button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu"><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span></button></div></div></header>
@@ -17,39 +38,172 @@
     <aside class="sub-nav"><span class="sub-nav__title">입사안내</span><nav class="sub-nav__list"><a href="guide.html" class="sub-nav__link">입사안내</a></nav></aside>
     <div class="sub-content">
 
+      <!-- 채용 안내 -->
       <section>
         <h2 class="section-title">채용 안내</h2>
-        <p style="color:var(--color-gray);line-height:1.9;margin-bottom:32px;">신원스틸(주)은 35년 업력의 후판 가공 전문 기업으로, 코스닥 상장사 버넥트(VIRNECT)의 자회사입니다. 함께 성장할 인재를 찾고 있습니다.</p>
+        <p style="color:var(--color-gray);line-height:1.9;margin-bottom:28px;">신원스틸(주)은 35년 업력의 후판 가공 전문 기업으로, 코스닥 상장사 버넥트(VIRNECT)의 자회사입니다. 함께 성장할 인재를 찾고 있습니다.</p>
 
-        <!-- 채용 절차 이미지 -->
-        <div style="margin-bottom:16px;">
-          <img src="../images/recruit_process.png" alt="채용 절차 안내 — 채용시기, 절차, 제출서류, 수시면접 가능분야" style="width:100%;border-radius:var(--border-radius-lg);border:1px solid var(--color-border);">
+        <table class="recruit-table">
+          <tbody>
+            <tr>
+              <th rowspan="2">채용시기</th>
+              <td class="sub-th" style="width:60px;">정기</td>
+              <td>매년 4월 / 10월</td>
+              <td style="color:var(--color-gray);">Email / Internet 접수</td>
+            </tr>
+            <tr>
+              <td class="sub-th">수시</td>
+              <td>채용우대 부문</td>
+              <td style="color:var(--color-gray);">우편 접수만 가능</td>
+            </tr>
+            <tr>
+              <th>절차</th>
+              <td colspan="3">① 서류심사 &nbsp; ② 면접 &nbsp; ③ 수습사원 근무 (약 3개월) &nbsp; ④ 정규사원 발령</td>
+            </tr>
+            <tr>
+              <th rowspan="6">제출서류</th>
+              <td colspan="3">① 입사지원 및 이력서 (당사 양식 Download 후 작성, 사진 필수) 1부 &nbsp; ※ 필히 자필로 기재해주세요.</td>
+            </tr>
+            <tr><td colspan="3">② 신입사원 설문지 &nbsp; ※ 필히 자필로 기재해주세요.</td></tr>
+            <tr><td colspan="3">③ 최종학교 성적증명서</td></tr>
+            <tr><td colspan="3">④ 기타 자격증 사본 (해당자에 한함)</td></tr>
+            <tr><td colspan="3">⑤ 주민등록등본</td></tr>
+            <tr><td colspan="3" style="color:var(--color-primary);font-size:13px;">자기소개서는 필요 없음 (면접 시 질의 / 응답으로 대체)</td></tr>
+            <tr>
+              <th>수시면접<br>가능분야<br><span style="font-size:12px;font-weight:400;">(채용우대 부문)</span></th>
+              <td colspan="3">
+                <ol>
+                  <li>Web-Master 및 관리 가능자</li>
+                  <li>비파괴검사 자격증 소지자</li>
+                  <li>CAD 관련 자격증 소지자</li>
+                  <li>군 장교 출신</li>
+                  <li>금속 재료 / 경영학 / 전산관련학과 / 회계학 전공</li>
+                </ol>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="display:flex;gap:12px;margin-bottom:48px;">
+          <a href="mailto:shinwonjm@hanmail.net" class="btn-green">입사지원서 / 이력서 문의</a>
+          <a href="mailto:shinwonjm@hanmail.net" class="btn-green">신입사원 설문지 문의</a>
         </div>
       </section>
 
+      <!-- 인사제도 -->
       <section>
-        <h2 class="section-title">인사제도 및 복리후생</h2>
+        <h2 class="section-title">인사제도</h2>
 
-        <!-- 복리후생 이미지 -->
-        <div style="margin-bottom:16px;">
-          <img src="../images/recruit_benefits.png" alt="인사제도, 복리후생, 근무시간, 급여수준 안내" style="width:100%;border-radius:var(--border-radius-lg);border:1px solid var(--color-border);">
+        <h3 style="font-size:15px;font-weight:700;color:var(--color-dark);margin-bottom:12px;">1. 인사고과에 따라 승진/승급</h3>
+        <table class="recruit-table" style="margin-bottom:20px;">
+          <tbody>
+            <tr><td colspan="2">① 신입에서 부장까지 통상 18년</td></tr>
+            <tr><td colspan="2">② 고과우수자 = 최단 9년 가능 (통상기간의 약 50%)</td></tr>
+            <tr><td colspan="2">③ 고과불량자 = 18년 이상 소요</td></tr>
+          </tbody>
+        </table>
+        <div class="section-box" style="margin-bottom:20px;">
+          <ul>
+            <li>인사고과는 상급자(1/3) + 차상급자(1/3) + 부하 및 동료(1/3)로 이루어집니다.</li>
+            <li>TEAM별 / 공장별 / 연도별로 성과급이 차이가 날 수 있습니다. (년 300%까지)</li>
+          </ul>
+        </div>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--color-dark);margin-bottom:12px;">2. 장기근속자 특별 경영성과급</h3>
+        <div class="section-box">
+          <ul>
+            <li>장기근속자(입사 7~9년 후부터 적용)에게는 회사 경영실적에 따른 경영성과급이 퇴직 후 별도로 지급 가능합니다.</li>
+            <li>지급시기: 퇴직 후 수개월에 걸쳐 지급</li>
+            <li>해당금액: 매년 연봉 × 약 10% 전후</li>
+            <li>STOCK-OPTION 해당기간 = 총 근속기간 18년 - 적용 개시 년한 8년 = 10년 &nbsp;&nbsp; 10년 × 매년 10% 씩 = 100%</li>
+            <li>결론: 재직 기간 중 회사에 심각한 손해를 끼치지 않은 한, 1년치 연봉 정도를 퇴직 후 법정퇴직금 이외에 추가로 수령할 수 있습니다.</li>
+          </ul>
         </div>
       </section>
 
+      <!-- 복리후생 -->
+      <section>
+        <h2 class="section-title">복리후생</h2>
+        <div class="section-box">
+          <ul>
+            <li>4대 보험 (국민연금 / 고용보험 / 의료보험 / 산재보험)</li>
+            <li>년·月차 휴가 (혹은 수당)</li>
+            <li>독신자 숙소 제공</li>
+            <li>입사 8년 후 일본 합작선 견학 및 관광</li>
+            <li>2년에 최소 1회 이상 사외교육 기회 부여</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 근무시간 -->
+      <section>
+        <h2 class="section-title">근무시간</h2>
+        <table class="recruit-table">
+          <tbody>
+            <tr>
+              <th>월 ~ 금요일</th>
+              <td>08:00 ~ 18:00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>토, 일, 공휴일</th>
+              <td>휴무</td>
+              <td>휴무일 근무할 경우 잔업수당 150% 지불</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 급여수준 -->
+      <section>
+        <h2 class="section-title">급여수준 <span style="font-size:13px;font-weight:400;color:var(--color-gray);">(2017년 상반기 신입사원 기준)</span></h2>
+        <table class="salary-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>구분</th>
+              <th>직종</th>
+              <th>年간 기준 (최소~예상)</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>남</td>
+              <td>4년제 대졸</td>
+              <td>사무직</td>
+              <td>약 3,200 ~ 3,300만원</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>남</td>
+              <td>고졸</td>
+              <td>생산직</td>
+              <td>약 2,900 ~ 3,000만원</td>
+              <td style="font-size:13px;">잔업수당 최저 12,500원/시간(별도 추가)</td>
+            </tr>
+            <tr>
+              <td>여</td>
+              <td>고졸</td>
+              <td>사무직</td>
+              <td>약 2,600 ~ 2,700만원</td>
+              <td style="font-size:13px;">잔업수당 최저 11,000원/시간(별도 추가)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--color-gray-light);margin-bottom:40px;">※ 위 급여 정보는 2017년 기준으로 현재와 다를 수 있습니다. 정확한 급여는 채용 시 별도 협의합니다.</p>
+      </section>
+
+      <!-- 지원 문의 -->
       <section>
         <h2 class="section-title">지원 문의</h2>
-        <div style="background:var(--color-bg-light);border-radius:var(--border-radius-lg);padding:40px;text-align:center;margin-bottom:40px;">
+        <div style="background:var(--color-bg-light);border-radius:var(--border-radius-lg);padding:40px;text-align:center;">
           <p style="font-size:15px;color:var(--color-gray);margin-bottom:24px;line-height:1.7;">채용 공고 및 지원 방법은 담당자에게 직접 문의해 주세요.</p>
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
             <a href="tel:0414117800" class="btn btn-primary">041-411-7800</a>
             <a href="mailto:shinwonjm@hanmail.net" class="btn btn-outline">이메일 문의</a>
           </div>
         </div>
-        <table class="info-table"><tbody>
-          <tr><th>주소</th><td>충남 천안시 서북구 성환읍 신방로 108</td></tr>
-          <tr><th>연락처</th><td><a href="tel:0414117800" style="color:var(--color-primary)">041-411-7800</a></td></tr>
-          <tr><th>이메일</th><td><a href="mailto:shinwonjm@hanmail.net" style="color:var(--color-primary)">shinwonjm@hanmail.net</a></td></tr>
-        </tbody></table>
       </section>
 
     </div>
