@@ -17,6 +17,7 @@
   <style>
     /* 히어로 우측 원형 장식 제거 */
     .hero::after { display: none; }
+
     /* 미래비전 6카드 레이아웃 */
     @media (min-width: 768px) {
       .ideology-cards { grid-template-columns: repeat(3, 1fr) !important; }
@@ -24,6 +25,57 @@
     @media (max-width: 767px) {
       .ideology-cards { grid-template-columns: repeat(2, 1fr) !important; }
     }
+
+    /* FACILITY 타일 */
+    .facility-tile {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px 24px 28px;
+      transition: background 0.2s;
+    }
+    .facility-tile:hover { background: rgba(255,255,255,0.08); }
+    .facility-tile__num {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--color-primary);
+      margin-bottom: 14px;
+    }
+    .facility-tile h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .facility-tile p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .facility-tiles { grid-template-columns: repeat(3, 1fr) !important; }
+    }
+    @media (max-width: 600px) {
+      .facility-tiles { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+
+    /* MEDIA 카드 개선 */
+    .news-card { border-top: 2px solid var(--color-border); padding-top: 24px; }
+    .news-card__source {
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* ABOUT 이미지 영역 세로 정렬 */
+    .about-section .two-col { align-items: center; }
+    .about-section .two-col__image img { border-radius: var(--border-radius-lg); }
   </style>
 </head>
 <body>
@@ -277,24 +329,47 @@
     </section>
 
     <!-- 생산설비 -->
-    <section class="section facility-section" aria-labelledby="facility-heading">
+    <section class="facility-section-new" aria-labelledby="facility-heading" style="background:#0a0f1e;padding:0 0 80px;">
+      <!-- 풀Width 배너 이미지 -->
+      <div style="width:100%;height:340px;position:relative;overflow:hidden;">
+        <img src="images/crane.png" alt="신원스틸 공장 내부" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,15,30,0.2) 0%, rgba(10,15,30,0.85) 100%);"></div>
+        <div style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);text-align:center;width:100%;">
+          <span style="font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.5);text-transform:uppercase;display:block;margin-bottom:10px;">FACILITY</span>
+          <h2 id="facility-heading" style="font-size:32px;font-weight:800;color:#fff;margin:0;">첨단 생산 설비</h2>
+        </div>
+      </div>
+      <!-- 설비 번호 타일 그리드 -->
       <div class="container">
-        <div class="two-col two-col--reverse">
-          <div class="two-col__image fade-up">
-            <img src="images/facility%20img.png" alt="신원스틸 NC 가스 절단 작업" style="width:100%;height:100%;object-fit:cover;border-radius:var(--border-radius-lg);display:block;">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:2px;" class="facility-tiles">
+          <div class="facility-tile fade-up">
+            <span class="facility-tile__num">01</span>
+            <h3>NC 가스<br>절단기</h3>
+            <p>컴퓨터 수치 제어 방식 정밀 모형 절단</p>
           </div>
-          <div class="two-col__text fade-up" data-delay="200">
-            <span class="label">FACILITY</span>
-            <h2 id="facility-heading">첨단 생산 설비</h2>
-            <ul class="facility-list">
-              <li><strong>NC 가스 절단기</strong> — 컴퓨터 수치 제어 방식, 정밀 모형 절단</li>
-              <li><strong>플라즈마 절단기</strong> — 고정밀 열 절단, 스테인리스 가능</li>
-              <li><strong>대형 평탄도 교정설비</strong> — 후판 휨·변형 교정</li>
-              <li><strong>피어싱 가공 설비</strong> — 자체 특허 보유, 후판 홀 가공</li>
-              <li><strong>하부 정반 시스템</strong> — 2019년 특허 등록, 절단 정밀도 향상</li>
-            </ul>
-            <a href="company/facility.html" class="text-link">자세히 보기 →</a>
+          <div class="facility-tile fade-up" data-delay="100">
+            <span class="facility-tile__num">02</span>
+            <h3>플라즈마<br>절단기</h3>
+            <p>고정밀 열 절단, 스테인리스 대응 가능</p>
           </div>
+          <div class="facility-tile fade-up" data-delay="200">
+            <span class="facility-tile__num">03</span>
+            <h3>평탄도<br>교정설비</h3>
+            <p>대형 후판 소재의 휨·변형 교정</p>
+          </div>
+          <div class="facility-tile fade-up" data-delay="300">
+            <span class="facility-tile__num">04</span>
+            <h3>피어싱<br>가공 설비</h3>
+            <p>자체 특허 보유, 후판 홀 가공</p>
+          </div>
+          <div class="facility-tile fade-up" data-delay="400">
+            <span class="facility-tile__num">05</span>
+            <h3>하부 정반<br>시스템</h3>
+            <p>2019년 특허 등록, 절단 정밀도 향상</p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+          <a href="company/facility.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">생산설비 자세히 보기 →</a>
         </div>
       </div>
     </section>
@@ -347,8 +422,34 @@
             </div>
           </div>
           <div class="two-col__image fade-up" data-delay="200">
-            <div class="map-placeholder" role="img" aria-label="천안본사 위치 지도 영역">
-              <p>지도 영역<br>(카카오맵 추후 연동)</p>
+            <div style="background:var(--color-bg-light);border-radius:var(--border-radius-lg);padding:40px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:20px;">
+              <div style="display:flex;align-items:flex-start;gap:14px;">
+                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </span>
+                <div>
+                  <p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">주소</p>
+                  <p style="font-size:14px;font-weight:600;color:var(--color-dark);line-height:1.6;">충남 천안시 서북구<br>성환읍 신방로 108</p>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:14px;">
+                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+                </span>
+                <div>
+                  <p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">전화 / 팩스</p>
+                  <p style="font-size:14px;font-weight:600;color:var(--color-dark);">041-411-7800<br><span style="font-weight:400;color:var(--color-gray);">FAX 041-581-2600</span></p>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:14px;">
+                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                <div>
+                  <p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">이메일 / 운영시간</p>
+                  <p style="font-size:14px;font-weight:600;color:var(--color-dark);">shinwonjm@hanmail.net<br><span style="font-weight:400;color:var(--color-gray);">월~금 09:00 ~ 18:00</span></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
