@@ -8,6 +8,46 @@
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/pages/sub.css">
+  <style>
+    /* reset.css가 border/background를 날리므로 폼 입력 필드 복원 */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      background-color: var(--color-white);
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--color-dark);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--color-gray-light);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(27, 100, 218, 0.08);
+    }
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7684' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+  </style>
 </head>
 <body>
 
