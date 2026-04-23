@@ -28,6 +28,10 @@
           </li>
           <li class="gnb__menu-item">
             <a href="../job/guide.html" class="gnb__menu-link">입사안내</a>
+            <div class="mega-menu" aria-hidden="true">
+              <a href="../job/guide.html" class="mega-menu__link">채용안내</a>
+              <a href="../job/hr.html" class="mega-menu__link">인사제도</a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -58,7 +62,14 @@
         </div>
       </div>
       <div class="mobile-menu__item">
-        <a href="../job/guide.html" class="mobile-menu__direct-link">입사안내</a>
+        <button class="mobile-menu__toggle" aria-expanded="false">
+          입사안내
+          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="../job/guide.html" class="mobile-submenu__link">채용안내</a>
+          <a href="../job/hr.html" class="mobile-submenu__link">인사제도</a>
+        </div>
       </div>
     </nav>
     <div class="mobile-menu__cta">
