@@ -663,6 +663,21 @@
 }
 
 /* --------------------------------------------------------------------------
+   5-1. 메인 FACILITY 섹션 버튼 (다크 배경 위 아웃라인 버튼)
+   -------------------------------------------------------------------------- */
+.facility-section-new .btn-outline {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.facility-section-new .btn-outline:hover {
+  background-color: #ffffff !important;
+  color: var(--color-dark) !important;
+  border-color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
    6. 생산설비 섹션
    -------------------------------------------------------------------------- */
 .facility-section {
