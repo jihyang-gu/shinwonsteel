@@ -17,7 +17,7 @@
   <div class="page-header"><div class="page-header__inner"><nav class="breadcrumb"><span class="breadcrumb__item"><a href="../index.html">홈</a></span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">회사개요</span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">오시는길</span></nav><h1 class="page-header__title">오시는길</h1><p class="page-header__desc">신원스틸(주) 본사 위치 안내</p></div></div>
 
   <main class="section"><div class="container"><div class="sub-layout">
-    <aside class="sub-nav"><span class="sub-nav__title">회사개요</span><nav class="sub-nav__list"><a href="about.html" class="sub-nav__link">회사소개</a><a href="grades.html" class="sub-nav__link">취급강종</a><a href="facility.html" class="sub-nav__link">생산설비</a><a href="location.html" class="sub-nav__link">오시는길</a></nav></aside>
+    <aside class="sub-nav"><span class="sub-nav__title">회사개요</span><nav class="sub-nav__list"><a href="about.html" class="sub-nav__link">회사소개</a><a href="grades.html" class="sub-nav__link">취급강종</a><a href="facility.html" class="sub-nav__link">생산설비</a><a href="location.html" class="sub-nav__link active">오시는길</a></nav></aside>
     <div class="sub-content">
       <section>
         <h2 class="section-title">본사</h2>
@@ -37,24 +37,50 @@
 
   <script src="../js/common.js"></script>
   <!-- 카카오맵 SDK -->
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ed9f75cc5754561fa47b8d4d87c1e951&libraries=services"></script>
   <script>
-    kakao.maps.load(function() {
-      var container = document.getElementById('kakao-map');
-      var options = { center: new kakao.maps.LatLng(36.9178, 127.0956), level: 4 };
-      var map = new kakao.maps.Map(container, options);
-      var geocoder = new kakao.maps.services.Geocoder();
-      geocoder.addressSearch('충남 천안시 서북구 성환읍 신방로 108', function(result, status) {
-        if (status === kakao.maps.services.Status.OK) {
-          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-          var marker = new kakao.maps.Marker({ map: map, position: coords });
-          var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="padding:10px 14px;font-size:13px;font-weight:600;white-space:nowrap;">신원스틸(주)</div>'
+    // 카카오맵 SDK 동적 로드 + 오류 감지
+    (function() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=ed9f75cc5754561fa47b8d4d87c1e951&libraries=services&autoload=false';
+
+      script.onload = function() {
+        kakao.maps.load(function() {
+          var container = document.getElementById('kakao-map');
+          var options = { center: new kakao.maps.LatLng(36.9178, 127.0956), level: 4 };
+          var map = new kakao.maps.Map(container, options);
+          var geocoder = new kakao.maps.services.Geocoder();
+          geocoder.addressSearch('충남 천안시 서북구 성환읍 신방로 108', function(result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+              var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+              var marker = new kakao.maps.Marker({ map: map, position: coords });
+              var infowindow = new kakao.maps.InfoWindow({
+                content: '<div style="padding:10px 14px;font-size:13px;font-weight:600;white-space:nowrap;">신원스틸(주)</div>'
+              });
+              infowindow.open(map, marker);
+              map.setCenter(coords);
+            }
           });
-          infowindow.open(map, marker);
-          map.setCenter(coords);
-        }
-      });
-    });
+        });
+      };
+
+      script.onerror = function() {
+        // SDK 로드 실패 시 대체 UI 표시
+        var container = document.getElementById('kakao-map');
+        container.innerHTML = [
+          '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;',
+          'height:100%;background:var(--color-bg-light);border-radius:var(--border-radius-lg);gap:16px;">',
+          '<p style="font-size:15px;color:var(--color-gray);margin:0;">지도를 불러올 수 없습니다.</p>',
+          '<a href="https://map.kakao.com/link/search/충남+천안시+서북구+성환읍+신방로+108"',
+          '   target="_blank" rel="noopener"',
+          '   style="display:inline-block;padding:10px 24px;background:var(--color-primary);',
+          '          color:#fff;border-radius:var(--border-radius-md);font-size:14px;font-weight:600;">',
+          '카카오맵에서 보기 →</a>',
+          '</div>'
+        ].join('');
+      };
+
+      document.head.appendChild(script);
+    })();
   </script>
 </body></html>
