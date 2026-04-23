@@ -25,8 +25,13 @@
               <a href="company/location.html" class="mega-menu__link">오시는길</a>
             </div>
           </li>
-          <li class="gnb__menu-item"><a href="job/guide.html" class="gnb__menu-link">입사안내</a></li>
-          <li class="gnb__menu-item"><a href="contact/quote.html" class="gnb__menu-link">문의하기</a></li>
+          <li class="gnb__menu-item">
+            <a href="job/guide.html" class="gnb__menu-link">입사안내</a>
+            <div class="mega-menu" aria-hidden="true">
+              <a href="job/guide.html" class="mega-menu__link">채용안내</a>
+              <a href="job/hr.html" class="mega-menu__link">인사제도</a>
+            </div>
+          </li>
         </ul>
       </nav>
       <div class="gnb__actions">
@@ -51,8 +56,15 @@
           <a href="company/location.html" class="mobile-submenu__link">오시는길</a>
         </div>
       </div>
-      <div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="job/guide.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">입사안내</a></div>
-      <div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="contact/quote.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">문의하기</a></div>
+      <div class="mobile-menu__item">
+        <button class="mobile-menu__toggle" aria-expanded="false">입사안내
+          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="job/guide.html" class="mobile-submenu__link">채용안내</a>
+          <a href="job/hr.html" class="mobile-submenu__link">인사제도</a>
+        </div>
+      </div>
     </nav>
     <div class="mobile-menu__cta"><a href="contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a></div>
   </div>
@@ -80,36 +92,22 @@
           </p>
         </div>
 
-        <!-- 제1조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제1조 (목적)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제1조 (목적)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <p style="font-size:15px;color:var(--color-gray);line-height:1.9;">이 약관은 신원스틸(주)(이하 "회사")이 운영하는 홈페이지에서 제공하는 서비스(이하 "서비스")의 이용 조건 및 절차에 관한 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
         </section>
 
-        <!-- 제2조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제2조 (용어의 정의)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
-          <table class="info-table">
-            <tbody>
-              <tr><th>"사이트"</th><td>회사가 운영하는 인터넷 홈페이지(www.shinwonsteel.co.kr 및 GitHub Pages 주소 포함)</td></tr>
-              <tr><th>"이용자"</th><td>사이트에 접속하여 회사가 제공하는 서비스를 이용하는 자</td></tr>
-              <tr><th>"콘텐츠"</th><td>사이트에 게시된 텍스트, 이미지, 영상 등 모든 정보</td></tr>
-            </tbody>
-          </table>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제2조 (용어의 정의)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
+          <table class="info-table"><tbody>
+            <tr><th>"사이트"</th><td>회사가 운영하는 인터넷 홈페이지(www.shinwonsteel.co.kr 및 GitHub Pages 주소 포함)</td></tr>
+            <tr><th>"이용자"</th><td>사이트에 접속하여 회사가 제공하는 서비스를 이용하는 자</td></tr>
+            <tr><th>"콘텐츠"</th><td>사이트에 게시된 텍스트, 이미지, 영상 등 모든 정보</td></tr>
+          </tbody></table>
         </section>
 
-        <!-- 제3조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제3조 (약관의 효력 및 변경)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제3조 (약관의 효력 및 변경)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <ul style="font-size:15px;color:var(--color-gray);line-height:2;padding-left:0;list-style:none;">
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">①</span>이 약관은 사이트에 게시함으로써 효력이 발생합니다.</li>
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">②</span>회사는 합리적인 사유가 발생할 경우 약관을 변경할 수 있으며, 변경된 약관은 사이트에 공지함으로써 효력이 발생합니다.</li>
@@ -117,29 +115,19 @@
           </ul>
         </section>
 
-        <!-- 제4조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제4조 (서비스의 내용)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제4조 (서비스의 내용)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <p style="font-size:15px;color:var(--color-gray);line-height:1.9;margin-bottom:16px;">회사는 다음과 같은 서비스를 제공합니다.</p>
-          <table class="info-table">
-            <tbody>
-              <tr><th>회사 정보 제공</th><td>회사 소개, 사업 영역, 취급 강종, 생산설비 등 정보 제공</td></tr>
-              <tr><th>온라인 문의</th><td>견적 및 제품 문의 접수 폼 제공</td></tr>
-              <tr><th>채용 안내</th><td>채용 관련 정보 및 문의 채널 제공</td></tr>
-              <tr><th>오시는길 안내</th><td>회사 위치 및 연락처 정보 제공</td></tr>
-            </tbody>
-          </table>
+          <table class="info-table"><tbody>
+            <tr><th>회사 정보 제공</th><td>회사 소개, 사업 영역, 취급 강종, 생산설비 등 정보 제공</td></tr>
+            <tr><th>온라인 문의</th><td>견적 및 제품 문의 접수 폼 제공</td></tr>
+            <tr><th>채용 안내</th><td>채용 관련 정보 및 문의 채널 제공</td></tr>
+            <tr><th>오시는길 안내</th><td>회사 위치 및 연락처 정보 제공</td></tr>
+          </tbody></table>
         </section>
 
-        <!-- 제5조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제5조 (서비스 이용 시 주의사항)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제5조 (서비스 이용 시 주의사항)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <p style="font-size:15px;color:var(--color-gray);line-height:1.9;margin-bottom:16px;">이용자는 다음 각 호의 행위를 하여서는 안 됩니다.</p>
           <ul style="font-size:15px;color:var(--color-gray);line-height:2;padding-left:0;list-style:none;">
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--color-primary);"></span>허위 정보 입력을 통한 문의 신청</li>
@@ -149,24 +137,16 @@
           </ul>
         </section>
 
-        <!-- 제6조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제6조 (지식재산권)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제6조 (지식재산권)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <ul style="font-size:15px;color:var(--color-gray);line-height:2;padding-left:0;list-style:none;">
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">①</span>사이트에 게시된 콘텐츠에 대한 저작권 및 지식재산권은 회사에 귀속됩니다.</li>
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">②</span>이용자는 회사의 사전 동의 없이 사이트에 게시된 콘텐츠를 복제, 배포, 출판, 방송 등의 방법으로 이용하거나 제3자에게 이용하게 하여서는 안 됩니다.</li>
           </ul>
         </section>
 
-        <!-- 제7조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제7조 (면책 조항)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제7조 (면책 조항)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <ul style="font-size:15px;color:var(--color-gray);line-height:2;padding-left:0;list-style:none;">
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">①</span>회사는 천재지변, 불가항력적 사유로 인한 서비스 중단에 대해 책임을 지지 않습니다.</li>
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">②</span>회사는 이용자의 귀책 사유로 인한 서비스 이용 장애에 대해 책임을 지지 않습니다.</li>
@@ -174,12 +154,8 @@
           </ul>
         </section>
 
-        <!-- 제8조 -->
         <section style="margin-bottom:48px;">
-          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">
-            제8조 (준거법 및 관할 법원)
-            <span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span>
-          </h2>
+          <h2 style="font-size:18px;font-weight:700;color:var(--color-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--color-border);position:relative;">제8조 (준거법 및 관할 법원)<span style="position:absolute;left:0;bottom:-2px;width:48px;height:2px;background:var(--color-primary);"></span></h2>
           <ul style="font-size:15px;color:var(--color-gray);line-height:2;padding-left:0;list-style:none;">
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">①</span>이 약관에 관한 분쟁은 대한민국 법률에 따라 해석됩니다.</li>
             <li style="padding:8px 0;padding-left:20px;position:relative;"><span style="position:absolute;left:0;top:16px;font-weight:700;color:var(--color-primary);">②</span>회사와 이용자 간에 발생한 분쟁에 관한 소송은 회사의 본사 소재지를 관할하는 법원(대전지방법원 천안지원)을 제1심 관할 법원으로 합니다.</li>
@@ -195,7 +171,7 @@
     </div>
   </main>
 
-    <footer class="footer" role="contentinfo">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
@@ -224,11 +200,11 @@
           <p class="footer__info-title">신원스틸(주)</p>
           <div class="footer__address">
             <div class="footer__address-item"><span class="footer__address-label">대표이사</span><span class="footer__address-value">하태진</span></div>
-            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-XXXXX</span></div>
+            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-08113</span></div>
             <div class="footer__address-item"><span class="footer__address-label">주소</span><span class="footer__address-value">충남 천안시 서북구 성환읍 신방로 108 (우31007)</span></div>
             <div class="footer__address-item"><span class="footer__address-label">TEL</span><span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span></div>
             <div class="footer__address-item"><span class="footer__address-label">FAX</span><span class="footer__address-value">041-581-2600</span></div>
-            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-08113</span></div><div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div>
+            <div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div>
           </div>
         </address>
       </div>
