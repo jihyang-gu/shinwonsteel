@@ -15,18 +15,9 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/pages/main.css">
   <style>
-    /* 히어로 우측 원형 장식 제거 */
     .hero::after { display: none; }
-
-    /* 미래비전 6카드 레이아웃 */
-    @media (min-width: 768px) {
-      .ideology-cards { grid-template-columns: repeat(3, 1fr) !important; }
-    }
-    @media (max-width: 767px) {
-      .ideology-cards { grid-template-columns: repeat(2, 1fr) !important; }
-    }
-
-    /* FACILITY 타일 */
+    @media (min-width: 768px) { .ideology-cards { grid-template-columns: repeat(3, 1fr) !important; } }
+    @media (max-width: 767px) { .ideology-cards { grid-template-columns: repeat(2, 1fr) !important; } }
     .facility-tile {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -34,46 +25,13 @@
       transition: background 0.2s;
     }
     .facility-tile:hover { background: rgba(255,255,255,0.08); }
-    .facility-tile__num {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--color-primary);
-      margin-bottom: 14px;
-    }
-    .facility-tile h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-    .facility-tile p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-      margin: 0;
-    }
-    @media (max-width: 900px) {
-      .facility-tiles { grid-template-columns: repeat(3, 1fr) !important; }
-    }
-    @media (max-width: 600px) {
-      .facility-tiles { grid-template-columns: repeat(2, 1fr) !important; }
-    }
-
-    /* MEDIA 카드 개선 */
+    .facility-tile__num { display:block; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--color-primary); margin-bottom:14px; }
+    .facility-tile h3 { font-size:16px; font-weight:700; color:#fff; margin-bottom:10px; line-height:1.4; }
+    .facility-tile p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.7; margin:0; }
+    @media (max-width: 900px) { .facility-tiles { grid-template-columns: repeat(3, 1fr) !important; } }
+    @media (max-width: 600px) { .facility-tiles { grid-template-columns: repeat(2, 1fr) !important; } }
     .news-card { border-top: 2px solid var(--color-border); padding-top: 24px; }
-    .news-card__source {
-      background: var(--color-primary);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 3px;
-    }
-
-    /* ABOUT 이미지 영역 세로 정렬 */
+    .news-card__source { background:var(--color-primary); color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:3px; }
     .about-section .two-col { align-items: center; }
     .about-section .two-col__image img { border-radius: var(--border-radius-lg); }
   </style>
@@ -99,6 +57,10 @@
           </li>
           <li class="gnb__menu-item">
             <a href="job/guide.html" class="gnb__menu-link">입사안내</a>
+            <div class="mega-menu" aria-hidden="true">
+              <a href="job/guide.html" class="mega-menu__link">채용안내</a>
+              <a href="job/hr.html" class="mega-menu__link">인사제도</a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -129,7 +91,14 @@
         </div>
       </div>
       <div class="mobile-menu__item">
-        <a href="job/guide.html" class="mobile-menu__direct-link">입사안내</a>
+        <button class="mobile-menu__toggle" aria-expanded="false">
+          입사안내
+          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="job/guide.html" class="mobile-submenu__link">채용안내</a>
+          <a href="job/hr.html" class="mobile-submenu__link">인사제도</a>
+        </div>
       </div>
     </nav>
     <div class="mobile-menu__cta">
@@ -165,22 +134,10 @@
     <section class="stats" aria-label="주요 수치">
       <div class="container">
         <div class="stats__grid">
-          <div class="stats__item">
-            <strong>35<span>+</span></strong>
-            <p>창립 연수</p>
-          </div>
-          <div class="stats__item">
-            <strong>12<span>종+</span></strong>
-            <p>취급 강종</p>
-          </div>
-          <div class="stats__item">
-            <strong>ISO 9001</strong>
-            <p>품질 인증</p>
-          </div>
-          <div class="stats__item">
-            <strong>2<span>건</span></strong>
-            <p>보유 특허</p>
-          </div>
+          <div class="stats__item"><strong>35<span>+</span></strong><p>창립 연수</p></div>
+          <div class="stats__item"><strong>12<span>종+</span></strong><p>취급 강종</p></div>
+          <div class="stats__item"><strong>ISO 9001</strong><p>품질 인증</p></div>
+          <div class="stats__item"><strong>2<span>건</span></strong><p>보유 특허</p></div>
         </div>
       </div>
     </section>
@@ -202,7 +159,7 @@
       </div>
     </section>
 
-    <!-- 스마트팩토리 차별점 -->
+    <!-- 미래 비전 -->
     <section class="ideology-section" aria-labelledby="smart-heading">
       <div class="container">
         <span class="label label--white">미래 비전</span>
@@ -210,44 +167,32 @@
         <p>2025년 코스닥 상장사 버넥트(VIRNECT)의 자회사로 편입되어 AI·DX 기반 스마트팩토리로의 전환을 추진합니다.</p>
         <div class="ideology-cards" style="grid-template-columns:repeat(3,1fr);gap:20px;">
           <div class="ideology-card fade-up">
-            <span class="ideology-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-            </span>
+            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
             <h3>품질 관리</h3>
             <p>AI 영상인식 기반 불량 검출 및 실시간 품질 모니터링으로 제품 신뢰성을 보장합니다.</p>
           </div>
           <div class="ideology-card fade-up" data-delay="100">
-            <span class="ideology-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </span>
+            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
             <h3>생산 관리</h3>
             <p>AI 기반 실시간 데이터 분석 및 이상 감지로 공정 전반의 생산성을 최적화합니다.</p>
           </div>
           <div class="ideology-card fade-up" data-delay="200">
-            <span class="ideology-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            </span>
+            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
             <h3>납기 관리</h3>
             <p>디지털 트윈 기반 공정 시뮬레이션으로 납기를 정확히 예측하고 단납기를 실현합니다.</p>
           </div>
           <div class="ideology-card fade-up" data-delay="300">
-            <span class="ideology-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg>
-            </span>
+            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg></span>
             <h3>재고 관리</h3>
             <p>스마트 자재관리 시스템으로 원자재 및 완제품 재고 현황을 실시간으로 파악합니다.</p>
           </div>
           <div class="ideology-card fade-up" data-delay="400">
-            <span class="ideology-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            </span>
+            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
             <h3>안전 관리</h3>
             <p>AI 영상 분석 기반 안전관리 및 XR 실감형 안전 교육훈련으로 현장 안전 수준을 높입니다.</p>
           </div>
           <div class="ideology-card fade-up" data-delay="500">
-            <span class="ideology-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.07A1 1 0 0121 8.847V6a2 2 0 00-2-2H5a2 2 0 00-2 2v2.847a1 1 0 00.447.832L8 10"/><rect x="3" y="10" width="18" height="11" rx="2"/></svg>
-            </span>
+            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.07A1 1 0 0121 8.847V6a2 2 0 00-2-2H5a2 2 0 00-2 2v2.847a1 1 0 00.447.832L8 10"/><rect x="3" y="10" width="18" height="11" rx="2"/></svg></span>
             <h3>원격 협업</h3>
             <p>AR 기반 원격 협업 시스템 도입으로 현장과 사무실 간 실시간 소통 및 기술 지원이 가능합니다.</p>
           </div>
@@ -262,60 +207,12 @@
         <h2 id="grades-heading">취급 강종</h2>
         <p class="section-desc">SS/SM/SB/ASTM 다양한 재질 취급 · 두께 300mm 이하 대응 · 스테인리스 절단 가능</p>
         <div class="grades-grid">
-          <div class="grade-card fade-up">
-            <p class="grade-card__name">SS400</p>
-            <p class="grade-card__spec">일반 구조용 압연 강재</p>
-            <div class="grade-card__divider" aria-hidden="true"></div>
-            <p class="grade-card__desc">건축·교량·선박·차량 등 일반 구조물에 가장 널리 사용되는 범용 강재입니다.</p>
-            <div class="grade-card__tags">
-              <span class="grade-card__tag">건축</span><span class="grade-card__tag">교량</span><span class="grade-card__tag">선박</span>
-            </div>
-          </div>
-          <div class="grade-card fade-up" data-delay="100">
-            <p class="grade-card__name">SM490</p>
-            <p class="grade-card__spec">용접 구조용 압연 강재</p>
-            <div class="grade-card__divider" aria-hidden="true"></div>
-            <p class="grade-card__desc">고강도 용접 구조물 및 건설기계에 적합한 우수한 용접성을 갖춘 강재입니다.</p>
-            <div class="grade-card__tags">
-              <span class="grade-card__tag">고강도</span><span class="grade-card__tag">용접성</span>
-            </div>
-          </div>
-          <div class="grade-card fade-up" data-delay="200">
-            <p class="grade-card__name">A516-70</p>
-            <p class="grade-card__spec">압력 용기용 탄소 강재</p>
-            <div class="grade-card__divider" aria-hidden="true"></div>
-            <p class="grade-card__desc">열교환기 및 압력 용기 제작에 최적화된 ASTM 규격의 고강도 탄소강입니다.</p>
-            <div class="grade-card__tags">
-              <span class="grade-card__tag">압력용기</span><span class="grade-card__tag">열교환기</span>
-            </div>
-          </div>
-          <div class="grade-card fade-up" data-delay="100">
-            <p class="grade-card__name">A283</p>
-            <p class="grade-card__spec">저탄소 구조용 강재</p>
-            <div class="grade-card__divider" aria-hidden="true"></div>
-            <p class="grade-card__desc">저압 용기 및 탱크 제작에 사용되는 ASTM 규격의 저탄소 강재입니다.</p>
-            <div class="grade-card__tags">
-              <span class="grade-card__tag">저압용기</span><span class="grade-card__tag">탱크</span>
-            </div>
-          </div>
-          <div class="grade-card fade-up" data-delay="200">
-            <p class="grade-card__name">A36</p>
-            <p class="grade-card__spec">구조용 탄소 강재</p>
-            <div class="grade-card__divider" aria-hidden="true"></div>
-            <p class="grade-card__desc">건축 구조물 및 교량에 광범위하게 사용되는 ASTM 표준 범용 탄소강입니다.</p>
-            <div class="grade-card__tags">
-              <span class="grade-card__tag">ASTM</span><span class="grade-card__tag">범용</span>
-            </div>
-          </div>
-          <div class="grade-card fade-up" data-delay="300">
-            <p class="grade-card__name">SLAB</p>
-            <p class="grade-card__spec">연속 주조 슬라브</p>
-            <div class="grade-card__divider" aria-hidden="true"></div>
-            <p class="grade-card__desc">후판 소재로 사용되는 연속 주조 슬라브로 정밀 모형 절단 가공에 활용됩니다.</p>
-            <div class="grade-card__tags">
-              <span class="grade-card__tag">소재</span><span class="grade-card__tag">모형절단</span>
-            </div>
-          </div>
+          <div class="grade-card fade-up"><p class="grade-card__name">SS400</p><p class="grade-card__spec">일반 구조용 압연 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">건축·교량·선박·차량 등 일반 구조물에 가장 널리 사용되는 범용 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">건축</span><span class="grade-card__tag">교량</span><span class="grade-card__tag">선박</span></div></div>
+          <div class="grade-card fade-up" data-delay="100"><p class="grade-card__name">SM490</p><p class="grade-card__spec">용접 구조용 압연 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">고강도 용접 구조물 및 건설기계에 적합한 우수한 용접성을 갖춘 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">고강도</span><span class="grade-card__tag">용접성</span></div></div>
+          <div class="grade-card fade-up" data-delay="200"><p class="grade-card__name">A516-70</p><p class="grade-card__spec">압력 용기용 탄소 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">열교환기 및 압력 용기 제작에 최적화된 ASTM 규격의 고강도 탄소강입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">압력용기</span><span class="grade-card__tag">열교환기</span></div></div>
+          <div class="grade-card fade-up" data-delay="100"><p class="grade-card__name">A283</p><p class="grade-card__spec">저탄소 구조용 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">저압 용기 및 탱크 제작에 사용되는 ASTM 규격의 저탄소 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">저압용기</span><span class="grade-card__tag">탱크</span></div></div>
+          <div class="grade-card fade-up" data-delay="200"><p class="grade-card__name">A36</p><p class="grade-card__spec">구조용 탄소 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">건축 구조물 및 교량에 광범위하게 사용되는 ASTM 표준 범용 탄소강입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">ASTM</span><span class="grade-card__tag">범용</span></div></div>
+          <div class="grade-card fade-up" data-delay="300"><p class="grade-card__name">SLAB</p><p class="grade-card__spec">연속 주조 슬라브</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">후판 소재로 사용되는 연속 주조 슬라브로 정밀 모형 절단 가공에 활용됩니다.</p><div class="grade-card__tags"><span class="grade-card__tag">소재</span><span class="grade-card__tag">모형절단</span></div></div>
         </div>
         <p style="margin-top:24px;font-size:13px;color:var(--color-gray);">※ 상세 재고 현황은 공개하지 않으며, 별도 문의를 통해 안내드립니다. <a href="contact/quote.html" style="color:var(--color-primary);">견적 문의하기 →</a></p>
       </div>
@@ -333,34 +230,15 @@
       </div>
       <div class="container">
         <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:2px;" class="facility-tiles">
-          <div class="facility-tile fade-up">
-            <span class="facility-tile__num">01</span>
-            <h3>NC 가스<br>절단기</h3>
-            <p>컴퓨터 수치 제어 방식 정밀 모형 절단</p>
-          </div>
-          <div class="facility-tile fade-up" data-delay="100">
-            <span class="facility-tile__num">02</span>
-            <h3>플라즈마<br>절단기</h3>
-            <p>고정밀 열 절단, 스테인리스 대응 가능</p>
-          </div>
-          <div class="facility-tile fade-up" data-delay="200">
-            <span class="facility-tile__num">03</span>
-            <h3>평탄도<br>교정설비</h3>
-            <p>대형 후판 소재의 휨·변형 교정</p>
-          </div>
-          <div class="facility-tile fade-up" data-delay="300">
-            <span class="facility-tile__num">04</span>
-            <h3>피어싱<br>가공 설비</h3>
-            <p>자체 특허 보유, 후판 홀 가공</p>
-          </div>
-          <div class="facility-tile fade-up" data-delay="400">
-            <span class="facility-tile__num">05</span>
-            <h3>하부 정반<br>시스템</h3>
-            <p>2019년 특허 등록, 절단 정밀도 향상</p>
-          </div>
+          <div class="facility-tile fade-up"><span class="facility-tile__num">01</span><h3>NC 가스<br>절단기</h3><p>컴퓨터 수치 제어 방식 정밀 모형 절단</p></div>
+          <div class="facility-tile fade-up" data-delay="100"><span class="facility-tile__num">02</span><h3>플라즈마<br>절단기</h3><p>고정밀 열 절단, 스테인리스 대응 가능</p></div>
+          <div class="facility-tile fade-up" data-delay="200"><span class="facility-tile__num">03</span><h3>평탄도<br>교정설비</h3><p>대형 후판 소재의 휨·변형 교정</p></div>
+          <div class="facility-tile fade-up" data-delay="300"><span class="facility-tile__num">04</span><h3>피어싱<br>가공 설비</h3><p>자체 특허 보유, 후판 홀 가공</p></div>
+          <div class="facility-tile fade-up" data-delay="400"><span class="facility-tile__num">05</span><h3>하부 정반<br>시스템</h3><p>2019년 특허 등록, 절단 정밀도 향상</p></div>
         </div>
         <div style="text-align:center;margin-top:40px;">
-          <a href="company/facility.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">생산설비 자세히 보기 →</a>
+          <!-- facility 버튼: 다크배경 위이므로 color/border 명시 -->
+          <a href="company/facility.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff !important;">생산설비 자세히 보기 →</a>
         </div>
       </div>
     </section>
@@ -372,28 +250,19 @@
         <h2 id="news-heading">언론 속 신원스틸</h2>
         <div class="news-grid">
           <article class="news-card fade-up">
-            <div class="news-card__meta">
-              <span class="news-card__date">1991.09</span>
-              <span class="news-card__source">국민일보</span>
-            </div>
+            <div class="news-card__meta"><span class="news-card__date">1991.09</span><span class="news-card__source">국민일보</span></div>
             <h3>日기술 따라잡으려면 분업·전문화 시급</h3>
-            <a href="http://newslibrary.naver.com/viewer/index.nhn?articleId=1991091800329117006" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="국민일보 기사 새 창으로 보기">기사 보기 →</a>
+            <a href="http://newslibrary.naver.com/viewer/index.nhn?articleId=1991091800329117006" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
           </article>
           <article class="news-card fade-up" data-delay="200">
-            <div class="news-card__meta">
-              <span class="news-card__date">2009.05</span>
-              <span class="news-card__source">MK</span>
-            </div>
+            <div class="news-card__meta"><span class="news-card__date">2009.05</span><span class="news-card__source">MK</span></div>
             <h3>인식을 전환하는 정책으로 중소기업의 인재난 해결</h3>
-            <a href="http://www.welder.or.kr/Report/SpecialReport2009/Cutiingwork/Interview/Shinwon.html" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="MK 기사 새 창으로 보기">기사 보기 →</a>
+            <a href="http://www.welder.or.kr/Report/SpecialReport2009/Cutiingwork/Interview/Shinwon.html" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
           </article>
           <article class="news-card fade-up" data-delay="400">
-            <div class="news-card__meta">
-              <span class="news-card__date">2013.06</span>
-              <span class="news-card__source">스틸데일리</span>
-            </div>
+            <div class="news-card__meta"><span class="news-card__date">2013.06</span><span class="news-card__source">스틸데일리</span></div>
             <h3>후판시장 불황? 굴하지 않아</h3>
-            <a href="http://www.snmnews.com/news/articleView.html?idxno=309968" target="_blank" rel="noopener noreferrer" class="text-link" aria-label="스틸데일리 기사 새 창으로 보기">기사 보기 →</a>
+            <a href="http://www.snmnews.com/news/articleView.html?idxno=309968" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
           </article>
         </div>
       </div>
@@ -415,31 +284,16 @@
           <div class="two-col__image fade-up" data-delay="200">
             <div style="background:var(--color-bg-light);border-radius:var(--border-radius-lg);padding:40px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:20px;">
               <div style="display:flex;align-items:flex-start;gap:14px;">
-                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                </span>
-                <div>
-                  <p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">주소</p>
-                  <p style="font-size:14px;font-weight:600;color:var(--color-dark);line-height:1.6;">충남 천안시 서북구<br>성환읍 신방로 108</p>
-                </div>
+                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
+                <div><p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">주소</p><p style="font-size:14px;font-weight:600;color:var(--color-dark);line-height:1.6;">충남 천안시 서북구<br>성환읍 신방로 108</p></div>
               </div>
               <div style="display:flex;align-items:flex-start;gap:14px;">
-                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                </span>
-                <div>
-                  <p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">전화 / 팩스</p>
-                  <p style="font-size:14px;font-weight:600;color:var(--color-dark);">041-411-7800<br><span style="font-weight:400;color:var(--color-gray);">FAX 041-581-2600</span></p>
-                </div>
+                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></span>
+                <div><p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">전화 / 팩스</p><p style="font-size:14px;font-weight:600;color:var(--color-dark);">041-411-7800<br><span style="font-weight:400;color:var(--color-gray);">FAX 041-581-2600</span></p></div>
               </div>
               <div style="display:flex;align-items:flex-start;gap:14px;">
-                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </span>
-                <div>
-                  <p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">이메일 / 운영시간</p>
-                  <p style="font-size:14px;font-weight:600;color:var(--color-dark);">shinwonjm@hanmail.net<br><span style="font-weight:400;color:var(--color-gray);">월~금 09:00 ~ 18:00</span></p>
-                </div>
+                <span style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                <div><p style="font-size:12px;color:var(--color-gray);margin-bottom:4px;">이메일 / 운영시간</p><p style="font-size:14px;font-weight:600;color:var(--color-dark);">shinwonjm@hanmail.net<br><span style="font-weight:400;color:var(--color-gray);">월~금 09:00 ~ 18:00</span></p></div>
               </div>
             </div>
           </div>
