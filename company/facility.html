@@ -7,9 +7,46 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
   <style>
-    .facility-card__img{width:100%;height:200px;object-fit:cover;border-radius:var(--border-radius-md) var(--border-radius-md) 0 0;display:block;}
-    .facility-card{padding-top:0;overflow:hidden;}
-    .facility-card .facility-card__body{padding:20px;}
+    /* 이미지 있는 설비 카드 레이아웃 */
+    .facility-card {
+      padding: 0 !important;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .facility-card__img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+      border-radius: 0; /* 카드 자체 radius 활용 */
+    }
+    .facility-card .facility-card__body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .facility-card .facility-card__num {
+      font-size: 36px;
+      font-weight: 700;
+      color: rgba(27, 100, 218, 0.15);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .facility-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 10px;
+    }
+    .facility-card p {
+      font-size: 14px;
+      color: var(--color-gray);
+      line-height: 1.7;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -19,7 +56,7 @@
   <div class="page-header"><div class="page-header__inner"><nav class="breadcrumb"><span class="breadcrumb__item"><a href="../index.html">홈</a></span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">회사개요</span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">생산설비</span></nav><h1 class="page-header__title">생산설비</h1><p class="page-header__desc">35년 노하우가 담긴 정밀 가공 설비</p></div></div>
 
   <main class="section"><div class="container"><div class="sub-layout">
-    <aside class="sub-nav"><span class="sub-nav__title">회사개요</span><nav class="sub-nav__list"><a href="about.html" class="sub-nav__link">회사소개</a><a href="grades.html" class="sub-nav__link">취급강종</a><a href="facility.html" class="sub-nav__link">생산설비</a><a href="location.html" class="sub-nav__link">오시는길</a></nav></aside>
+    <aside class="sub-nav"><span class="sub-nav__title">회사개요</span><nav class="sub-nav__list"><a href="about.html" class="sub-nav__link">회사소개</a><a href="grades.html" class="sub-nav__link">취급강종</a><a href="facility.html" class="sub-nav__link active">생산설비</a><a href="location.html" class="sub-nav__link">오시는길</a></nav></aside>
     <div class="sub-content">
       <section>
         <h2 class="section-title">생산 설비 현황</h2>
