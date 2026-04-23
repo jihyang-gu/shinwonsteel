@@ -5,93 +5,160 @@
   <title>문의하기 — 신원스틸(주)</title>
   <meta name="description" content="신원스틸(주)에 견적 및 제품 문의를 남겨주세요. 빠르게 답변 드리겠습니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/pages/sub.css">
 </head>
 <body>
-  <header class="gnb" id="gnb"><div class="gnb__inner"><a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a><nav class="gnb__nav"><ul class="gnb__menu"><li class="gnb__menu-item"><a href="../company/about.html" class="gnb__menu-link">회사개요</a><div class="mega-menu" aria-hidden="true"><a href="../company/about.html" class="mega-menu__link">회사소개</a><a href="../company/grades.html" class="mega-menu__link">취급강종</a><a href="../company/facility.html" class="mega-menu__link">생산설비</a><a href="../company/location.html" class="mega-menu__link">오시는길</a></div></li><li class="gnb__menu-item"><a href="../job/guide.html" class="gnb__menu-link">입사안내</a></li><li class="gnb__menu-item"><a href="../contact/quote.html" class="gnb__menu-link">문의하기</a></li></ul></nav><div class="gnb__actions"><a href="../contact/quote.html" class="gnb__cta">견적문의</a><button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu"><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span></button></div></div></header>
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true"><nav class="mobile-menu__nav"><div class="mobile-menu__item"><button class="mobile-menu__toggle" aria-expanded="false">회사개요<svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="mobile-submenu"><a href="../company/about.html" class="mobile-submenu__link">회사소개</a><a href="../company/grades.html" class="mobile-submenu__link">취급강종</a><a href="../company/facility.html" class="mobile-submenu__link">생산설비</a><a href="../company/location.html" class="mobile-submenu__link">오시는길</a></div></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../job/guide.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">입사안내</a></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../contact/quote.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">문의하기</a></div></nav><div class="mobile-menu__cta"><a href="../contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a></div></div>
 
-  <div class="page-header"><div class="page-header__inner"><nav class="breadcrumb"><span class="breadcrumb__item"><a href="../index.html">홈</a></span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">문의하기</span></nav><h1 class="page-header__title">문의하기</h1><p class="page-header__desc">견적 및 제품 문의를 남겨주시면 빠르게 답변 드리겠습니다</p></div></div>
-
-  <main class="section"><div class="container">
-    <div class="quote-layout">
-      <div class="quote-form-wrap">
-        <h2 class="section-title">견적 문의</h2>
-        <div id="formSuccess" style="display:none;text-align:center;padding:60px 40px;background:var(--color-bg-light);border-radius:var(--border-radius-lg);">
-          <p style="font-size:40px;margin-bottom:16px;">✓</p>
-          <h3 style="font-size:20px;font-weight:700;color:var(--color-dark);margin-bottom:12px;">문의가 접수되었습니다</h3>
-          <p style="color:var(--color-gray);line-height:1.8;">담당자가 확인 후 빠르게 연락 드리겠습니다.<br>급한 문의는 전화(041-411-7800)로 연락 주세요.</p>
-        </div>
-        <form id="quoteForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">성함 <span class="required">*</span></label>
-              <input type="text" id="name" name="name" placeholder="홍길동" required>
-              <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="nameError"></span>
+  <!-- GNB -->
+  <header class="gnb" id="gnb">
+    <div class="gnb__inner">
+      <a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a>
+      <nav class="gnb__nav">
+        <ul class="gnb__menu">
+          <li class="gnb__menu-item">
+            <a href="../company/about.html" class="gnb__menu-link">회사개요</a>
+            <div class="mega-menu" aria-hidden="true">
+              <a href="../company/about.html" class="mega-menu__link">회사소개</a>
+              <a href="../company/grades.html" class="mega-menu__link">취급강종</a>
+              <a href="../company/facility.html" class="mega-menu__link">생산설비</a>
+              <a href="../company/location.html" class="mega-menu__link">오시는길</a>
             </div>
-            <div class="form-group">
-              <label for="phone">연락처 <span class="required">*</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
-              <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="phoneError"></span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="company">회사명 <span class="required">*</span></label>
-              <input type="text" id="company" name="company" placeholder="(주)회사명" required>
-              <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="companyError"></span>
-            </div>
-            <div class="form-group">
-              <label for="region">지역 <span class="required">*</span></label>
-              <select id="region" name="region" required>
-                <option value="">지역 선택</option>
-                <option value="서울">서울</option><option value="경기">경기</option><option value="인천">인천</option>
-                <option value="충청">충청</option><option value="경상">경상</option><option value="전라">전라</option>
-                <option value="강원">강원</option><option value="제주">제주</option><option value="기타">기타</option>
-              </select>
-              <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="regionError"></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">문의내용 <span class="required">*</span></label>
-            <textarea id="message" name="message" placeholder="필요한 강종, 사이즈, 수량, 납기 등을 상세히 적어주시면 빠른 답변이 가능합니다." required rows="6"></textarea>
-            <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="messageError"></span>
-          </div>
-          <div class="form-group">
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <input type="checkbox" id="privacy" name="privacy" required style="width:16px;height:16px;min-width:16px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--color-primary);">
-              <label for="privacy" style="font-size:13px;color:var(--color-gray);line-height:1.7;cursor:pointer;"><a href="../privacy.html" target="_blank" style="color:var(--color-primary);">개인정보처리방침</a>에 동의하며, 문의 처리를 위한 개인정보 수집·이용에 동의합니다. <span class="required">*</span></label>
-            </div>
-            <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="privacyError"></span>
-          </div>
-          <p class="form-note">* 필수 입력 항목입니다. 수집된 개인정보는 문의 답변 목적으로만 사용됩니다.</p>
-          <button type="submit" class="form-submit" id="submitBtn">문의 보내기</button>
-        </form>
+          </li>
+          <li class="gnb__menu-item">
+            <a href="../job/guide.html" class="gnb__menu-link">입사안내</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="gnb__actions">
+        <a href="../contact/quote.html" class="gnb__cta">견적문의</a>
+        <button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu">
+          <span class="gnb__hamburger-line"></span>
+          <span class="gnb__hamburger-line"></span>
+          <span class="gnb__hamburger-line"></span>
+        </button>
       </div>
-
-      <aside class="contact-info">
-        <h2 class="section-title">직접 연락</h2>
-        <div class="contact-card">
-          <h3>전화 / 팩스</h3>
-          <p><a href="tel:0414117800">041-411-7800</a><br>FAX: 041-581-2600</p>
-        </div>
-        <div class="contact-card">
-          <h3>이메일</h3>
-          <p><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>주소</h3>
-          <p>충남 천안시 서북구<br>성환읍 신방로 108 (우31007)</p>
-        </div>
-        <div class="contact-card operating">
-          <h3>운영시간</h3>
-          <p>월~금 09:00 ~ 18:00<br>점심 12:00 ~ 13:00<br>(토·일·공휴일 휴무)</p>
-        </div>
-      </aside>
     </div>
-  </div></main>
+  </header>
 
-    <footer class="footer" role="contentinfo">
+  <!-- 모바일 메뉴 -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <nav class="mobile-menu__nav">
+      <div class="mobile-menu__item">
+        <button class="mobile-menu__toggle" aria-expanded="false">
+          회사개요
+          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="../company/about.html" class="mobile-submenu__link">회사소개</a>
+          <a href="../company/grades.html" class="mobile-submenu__link">취급강종</a>
+          <a href="../company/facility.html" class="mobile-submenu__link">생산설비</a>
+          <a href="../company/location.html" class="mobile-submenu__link">오시는길</a>
+        </div>
+      </div>
+      <div class="mobile-menu__item">
+        <a href="../job/guide.html" class="mobile-menu__direct-link">입사안내</a>
+      </div>
+    </nav>
+    <div class="mobile-menu__cta">
+      <a href="../contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="page-header__inner">
+      <nav class="breadcrumb">
+        <span class="breadcrumb__item"><a href="../index.html">홈</a></span>
+        <span class="breadcrumb__separator">›</span>
+        <span class="breadcrumb__item">문의하기</span>
+      </nav>
+      <h1 class="page-header__title">문의하기</h1>
+      <p class="page-header__desc">견적 및 제품 문의를 남겨주시면 빠르게 답변 드리겠습니다</p>
+    </div>
+  </div>
+
+  <main class="section">
+    <div class="container">
+      <div class="quote-layout">
+        <div class="quote-form-wrap">
+          <h2 class="section-title">견적 문의</h2>
+          <div id="formSuccess" style="display:none;text-align:center;padding:60px 40px;background:var(--color-bg-light);border-radius:var(--border-radius-lg);">
+            <p style="font-size:40px;margin-bottom:16px;">✓</p>
+            <h3 style="font-size:20px;font-weight:700;color:var(--color-dark);margin-bottom:12px;">문의가 접수되었습니다</h3>
+            <p style="color:var(--color-gray);line-height:1.8;">담당자가 확인 후 빠르게 연락 드리겠습니다.<br>급한 문의는 전화(041-411-7800)로 연락 주세요.</p>
+          </div>
+          <form id="quoteForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">성함 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="홍길동" required>
+                <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">연락처 <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="phoneError"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">회사명 <span class="required">*</span></label>
+                <input type="text" id="company" name="company" placeholder="(주)회사명" required>
+                <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="companyError"></span>
+              </div>
+              <div class="form-group">
+                <label for="region">지역 <span class="required">*</span></label>
+                <select id="region" name="region" required>
+                  <option value="">지역 선택</option>
+                  <option value="서울">서울</option><option value="경기">경기</option><option value="인천">인천</option>
+                  <option value="충청">충청</option><option value="경상">경상</option><option value="전라">전라</option>
+                  <option value="강원">강원</option><option value="제주">제주</option><option value="기타">기타</option>
+                </select>
+                <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="regionError"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">문의내용 <span class="required">*</span></label>
+              <textarea id="message" name="message" placeholder="필요한 강종, 사이즈, 수량, 납기 등을 상세히 적어주시면 빠른 답변이 가능합니다." required rows="6"></textarea>
+              <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="messageError"></span>
+            </div>
+            <div class="form-group">
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <input type="checkbox" id="privacy" name="privacy" required style="width:16px;height:16px;min-width:16px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--color-primary);">
+                <label for="privacy" style="font-size:13px;color:var(--color-gray);line-height:1.7;cursor:pointer;"><a href="../privacy.html" target="_blank" style="color:var(--color-primary);">개인정보처리방침</a>에 동의하며, 문의 처리를 위한 개인정보 수집·이용에 동의합니다. <span class="required">*</span></label>
+              </div>
+              <span style="display:none;font-size:12px;color:#e74c3c;margin-top:4px;" id="privacyError"></span>
+            </div>
+            <p class="form-note">* 필수 입력 항목입니다. 수집된 개인정보는 문의 답변 목적으로만 사용됩니다.</p>
+            <button type="submit" class="form-submit" id="submitBtn">문의 보내기</button>
+          </form>
+        </div>
+
+        <aside class="contact-info">
+          <h2 class="section-title">직접 연락</h2>
+          <div class="contact-card">
+            <h3>전화 / 팩스</h3>
+            <p><a href="tel:0414117800">041-411-7800</a><br>FAX: 041-581-2600</p>
+          </div>
+          <div class="contact-card">
+            <h3>이메일</h3>
+            <p><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></p>
+          </div>
+          <div class="contact-card">
+            <h3>주소</h3>
+            <p>충남 천안시 서북구<br>성환읍 신방로 108 (우31007)</p>
+          </div>
+          <div class="contact-card operating">
+            <h3>운영시간</h3>
+            <p>월~금 09:00 ~ 18:00<br>점심 12:00 ~ 13:00<br>(토·일·공휴일 휴무)</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
@@ -120,11 +187,11 @@
           <p class="footer__info-title">신원스틸(주)</p>
           <div class="footer__address">
             <div class="footer__address-item"><span class="footer__address-label">대표이사</span><span class="footer__address-value">하태진</span></div>
-            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-XXXXX</span></div>
+            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-08113</span></div>
             <div class="footer__address-item"><span class="footer__address-label">주소</span><span class="footer__address-value">충남 천안시 서북구 성환읍 신방로 108 (우31007)</span></div>
             <div class="footer__address-item"><span class="footer__address-label">TEL</span><span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span></div>
             <div class="footer__address-item"><span class="footer__address-label">FAX</span><span class="footer__address-value">041-581-2600</span></div>
-            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-08113</span></div><div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div>
+            <div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div>
           </div>
         </address>
       </div>
@@ -170,4 +237,5 @@
     });
   })();
   </script>
-</body></html>
+</body>
+</html>
