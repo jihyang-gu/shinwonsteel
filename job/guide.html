@@ -5,7 +5,9 @@
   <title>채용안내 — 신원스틸(주)</title>
   <meta name="description" content="신원스틸(주) 채용 안내. 채용시기, 절차, 제출서류, 수시면접 가능분야를 안내합니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/pages/sub.css">
   <style>
     .recruit-table { width:100%; border-collapse:collapse; margin-bottom:40px; font-size:14px; }
     .recruit-table th, .recruit-table td { border:1px solid var(--color-border); padding:12px 16px; vertical-align:top; line-height:1.7; text-align:left; }
@@ -17,93 +19,169 @@
     .recruit-table .sub-th { background:#f8f9fa; font-weight:600; color:var(--color-gray); }
     .btn-green { display:inline-flex; align-items:center; justify-content:center; padding:12px 28px; background:#3a8c5a; color:#fff; border-radius:var(--border-radius-md); font-size:14px; font-weight:600; text-decoration:none; transition:background 0.15s; }
     .btn-green:hover { background:#2d7048; }
-    .sub-nav__link--active {
-      color: var(--color-primary) !important;
-      font-weight: 700 !important;
-      background: var(--color-bg-light);
-    }
+    .sub-nav__link--active { color: var(--color-primary) !important; font-weight: 700 !important; background: var(--color-bg-light); }
   </style>
 </head>
 <body>
-  <header class="gnb" id="gnb"><div class="gnb__inner"><a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a><nav class="gnb__nav"><ul class="gnb__menu"><li class="gnb__menu-item"><a href="../company/about.html" class="gnb__menu-link">회사개요</a><div class="mega-menu" aria-hidden="true"><a href="../company/about.html" class="mega-menu__link">회사소개</a><a href="../company/grades.html" class="mega-menu__link">취급강종</a><a href="../company/facility.html" class="mega-menu__link">생산설비</a><a href="../company/location.html" class="mega-menu__link">오시는길</a></div></li><li class="gnb__menu-item"><a href="../job/guide.html" class="gnb__menu-link">입사안내</a><div class="mega-menu" aria-hidden="true"><a href="../job/guide.html" class="mega-menu__link">채용안내</a><a href="../job/hr.html" class="mega-menu__link">인사제도</a></div></li><li class="gnb__menu-item"><a href="../contact/quote.html" class="gnb__menu-link">문의하기</a></li></ul></nav><div class="gnb__actions"><a href="../contact/quote.html" class="gnb__cta">견적문의</a><button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu"><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span></button></div></div></header>
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true"><nav class="mobile-menu__nav"><div class="mobile-menu__item"><button class="mobile-menu__toggle" aria-expanded="false">회사개요<svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="mobile-submenu"><a href="../company/about.html" class="mobile-submenu__link">회사소개</a><a href="../company/grades.html" class="mobile-submenu__link">취급강종</a><a href="../company/facility.html" class="mobile-submenu__link">생산설비</a><a href="../company/location.html" class="mobile-submenu__link">오시는길</a></div></div><div class="mobile-menu__item"><button class="mobile-menu__toggle" aria-expanded="false">입사안내<svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="mobile-submenu"><a href="../job/guide.html" class="mobile-submenu__link">채용안내</a><a href="../job/hr.html" class="mobile-submenu__link">인사제도</a></div></div><div class="mobile-menu__item" style="border-bottom:1px solid var(--color-border)"><a href="../contact/quote.html" style="display:block;padding:16px var(--container-padding);font-size:16px;font-weight:500;color:var(--color-dark);">문의하기</a></div></nav><div class="mobile-menu__cta"><a href="../contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a></div></div>
 
-  <div class="page-header"><div class="page-header__inner"><nav class="breadcrumb"><span class="breadcrumb__item"><a href="../index.html">홈</a></span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">입사안내</span><span class="breadcrumb__separator">›</span><span class="breadcrumb__item">채용안내</span></nav><h1 class="page-header__title">채용안내</h1><p class="page-header__desc">신원스틸(주)에서 함께 성장할 인재를 찾습니다</p></div></div>
-
-  <main class="section"><div class="container"><div class="sub-layout">
-    <aside class="sub-nav">
-      <span class="sub-nav__title">입사안내</span>
-      <nav class="sub-nav__list">
-        <a href="guide.html" class="sub-nav__link sub-nav__link--active">채용안내</a>
-        <a href="hr.html" class="sub-nav__link">인사제도</a>
+  <!-- GNB -->
+  <header class="gnb" id="gnb">
+    <div class="gnb__inner">
+      <a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a>
+      <nav class="gnb__nav">
+        <ul class="gnb__menu">
+          <li class="gnb__menu-item">
+            <a href="../company/about.html" class="gnb__menu-link">회사개요</a>
+            <div class="mega-menu" aria-hidden="true">
+              <a href="../company/about.html" class="mega-menu__link">회사소개</a>
+              <a href="../company/grades.html" class="mega-menu__link">취급강종</a>
+              <a href="../company/facility.html" class="mega-menu__link">생산설비</a>
+              <a href="../company/location.html" class="mega-menu__link">오시는길</a>
+            </div>
+          </li>
+          <li class="gnb__menu-item">
+            <a href="../job/guide.html" class="gnb__menu-link">입사안내</a>
+            <div class="mega-menu" aria-hidden="true">
+              <a href="../job/guide.html" class="mega-menu__link">채용안내</a>
+              <a href="../job/hr.html" class="mega-menu__link">인사제도</a>
+            </div>
+          </li>
+        </ul>
       </nav>
-    </aside>
-    <div class="sub-content">
-
-      <section>
-        <h2 class="section-title">채용 안내</h2>
-        <p style="color:var(--color-gray);line-height:1.9;margin-bottom:28px;">신원스틸(주)은 35년 업력의 후판 가공 전문 기업으로, 코스닥 상장사 버넥트(VIRNECT)의 자회사입니다. 함께 성장할 인재를 찾고 있습니다.</p>
-        <table class="recruit-table">
-          <tbody>
-            <tr>
-              <th rowspan="2">채용시기</th>
-              <td class="sub-th" style="width:60px;">정기</td>
-              <td>매년 4월 / 10월</td>
-              <td style="color:var(--color-gray);">Email / Internet 접수</td>
-            </tr>
-            <tr>
-              <td class="sub-th">수시</td>
-              <td>채용우대 부문</td>
-              <td style="color:var(--color-gray);">우편 접수만 가능</td>
-            </tr>
-            <tr>
-              <th>절차</th>
-              <td colspan="3">① 서류심사 &nbsp; ② 면접 &nbsp; ③ 수습사원 근무 (약 3개월) &nbsp; ④ 정규사원 발령</td>
-            </tr>
-            <tr>
-              <th rowspan="6">제출서류</th>
-              <td colspan="3">① 입사지원 및 이력서 (당사 양식 Download 후 작성, 사진 필수) 1부 &nbsp; ※ 필히 자필로 기재해주세요.</td>
-            </tr>
-            <tr><td colspan="3">② 신입사원 설문지 &nbsp; ※ 필히 자필로 기재해주세요.</td></tr>
-            <tr><td colspan="3">③ 최종학교 성적증명서</td></tr>
-            <tr><td colspan="3">④ 기타 자격증 사본 (해당자에 한함)</td></tr>
-            <tr><td colspan="3">⑤ 주민등록등본</td></tr>
-            <tr><td colspan="3" style="color:var(--color-primary);font-size:13px;">자기소개서는 필요 없음 (면접 시 질의 / 응답으로 대체)</td></tr>
-            <tr>
-              <th>수시면접<br>가능분야<br><span style="font-size:12px;font-weight:400;">(채용우대 부문)</span></th>
-              <td colspan="3">
-                <ol>
-                  <li>Web-Master 및 관리 가능자</li>
-                  <li>비파괴검사 자격증 소지자</li>
-                  <li>CAD 관련 자격증 소지자</li>
-                  <li>군 장교 출신</li>
-                  <li>금속 재료 / 경영학 / 전산관련학과 / 회계학 전공</li>
-                </ol>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="display:flex;gap:12px;margin-bottom:48px;">
-          <a href="../docs/신원스틸_입사지원.pdf" download class="btn-green">📄 입사지원서 받기</a>
-          <a href="../docs/신원스틸신입사원_설문.pdf" download class="btn-green">📄 신입사원 설문지 받기</a>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="section-title">지원 문의</h2>
-        <div style="background:var(--color-bg-light);border-radius:var(--border-radius-lg);padding:40px;text-align:center;">
-          <p style="font-size:15px;color:var(--color-gray);margin-bottom:24px;line-height:1.7;">채용 공고 및 지원 방법은 담당자에게 직접 문의해 주세요.</p>
-          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-            <a href="tel:0414117800" class="btn btn-primary">041-411-7800</a>
-            <a href="mailto:shinwonjm@hanmail.net" class="btn btn-outline">이메일 문의</a>
-          </div>
-        </div>
-      </section>
-
+      <div class="gnb__actions">
+        <a href="../contact/quote.html" class="gnb__cta">견적문의</a>
+        <button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu">
+          <span class="gnb__hamburger-line"></span>
+          <span class="gnb__hamburger-line"></span>
+          <span class="gnb__hamburger-line"></span>
+        </button>
+      </div>
     </div>
-  </div></div></main>
+  </header>
 
-    <footer class="footer" role="contentinfo">
+  <!-- 모바일 메뉴 -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <nav class="mobile-menu__nav">
+      <div class="mobile-menu__item">
+        <button class="mobile-menu__toggle" aria-expanded="false">
+          회사개요
+          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="../company/about.html" class="mobile-submenu__link">회사소개</a>
+          <a href="../company/grades.html" class="mobile-submenu__link">취급강종</a>
+          <a href="../company/facility.html" class="mobile-submenu__link">생산설비</a>
+          <a href="../company/location.html" class="mobile-submenu__link">오시는길</a>
+        </div>
+      </div>
+      <div class="mobile-menu__item">
+        <button class="mobile-menu__toggle" aria-expanded="false">
+          입사안내
+          <svg class="mobile-menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="mobile-submenu">
+          <a href="../job/guide.html" class="mobile-submenu__link">채용안내</a>
+          <a href="../job/hr.html" class="mobile-submenu__link">인사제도</a>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu__cta">
+      <a href="../contact/quote.html" class="btn btn-primary" style="display:block;text-align:center;">견적 의뢰하기</a>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="page-header__inner">
+      <nav class="breadcrumb">
+        <span class="breadcrumb__item"><a href="../index.html">홈</a></span>
+        <span class="breadcrumb__separator">›</span>
+        <span class="breadcrumb__item">입사안내</span>
+        <span class="breadcrumb__separator">›</span>
+        <span class="breadcrumb__item">채용안내</span>
+      </nav>
+      <h1 class="page-header__title">채용안내</h1>
+      <p class="page-header__desc">신원스틸(주)에서 함께 성장할 인재를 찾습니다</p>
+    </div>
+  </div>
+
+  <main class="section">
+    <div class="container">
+      <div class="sub-layout">
+        <aside class="sub-nav">
+          <span class="sub-nav__title">입사안내</span>
+          <nav class="sub-nav__list">
+            <a href="guide.html" class="sub-nav__link sub-nav__link--active">채용안내</a>
+            <a href="hr.html" class="sub-nav__link">인사제도</a>
+          </nav>
+        </aside>
+        <div class="sub-content">
+
+          <section>
+            <h2 class="section-title">채용 안내</h2>
+            <p style="color:var(--color-gray);line-height:1.9;margin-bottom:28px;">신원스틸(주)은 35년 업력의 후판 가공 전문 기업으로, 코스닥 상장사 버넥트(VIRNECT)의 자회사입니다. 함께 성장할 인재를 찾고 있습니다.</p>
+            <table class="recruit-table">
+              <tbody>
+                <tr>
+                  <th rowspan="2">채용시기</th>
+                  <td class="sub-th" style="width:60px;">정기</td>
+                  <td>매년 4월 / 10월</td>
+                  <td style="color:var(--color-gray);">Email / Internet 접수</td>
+                </tr>
+                <tr>
+                  <td class="sub-th">수시</td>
+                  <td>채용우대 부문</td>
+                  <td style="color:var(--color-gray);">우편 접수만 가능</td>
+                </tr>
+                <tr>
+                  <th>절차</th>
+                  <td colspan="3">① 서류심사 &nbsp; ② 면접 &nbsp; ③ 수습사원 근무 (약 3개월) &nbsp; ④ 정규사원 발령</td>
+                </tr>
+                <tr>
+                  <th rowspan="6">제출서류</th>
+                  <td colspan="3">① 입사지원 및 이력서 (당사 양식 Download 후 작성, 사진 필수) 1부 &nbsp; ※ 필히 자필로 기재해주세요.</td>
+                </tr>
+                <tr><td colspan="3">② 신입사원 설문지 &nbsp; ※ 필히 자필로 기재해주세요.</td></tr>
+                <tr><td colspan="3">③ 최종학교 성적증명서</td></tr>
+                <tr><td colspan="3">④ 기타 자격증 사본 (해당자에 한함)</td></tr>
+                <tr><td colspan="3">⑤ 주민등록등본</td></tr>
+                <tr><td colspan="3" style="color:var(--color-primary);font-size:13px;">자기소개서는 필요 없음 (면접 시 질의 / 응답으로 대체)</td></tr>
+                <tr>
+                  <th>수시면접<br>가능분야<br><span style="font-size:12px;font-weight:400;">(채용우대 부문)</span></th>
+                  <td colspan="3">
+                    <ol>
+                      <li>Web-Master 및 관리 가능자</li>
+                      <li>비파괴검사 자격증 소지자</li>
+                      <li>CAD 관련 자격증 소지자</li>
+                      <li>군 장교 출신</li>
+                      <li>금속 재료 / 경영학 / 전산관련학과 / 회계학 전공</li>
+                    </ol>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="display:flex;gap:12px;margin-bottom:48px;">
+              <a href="../docs/신원스틸_입사지원.pdf" download class="btn-green">📄 입사지원서 받기</a>
+              <a href="../docs/신원스틸신입사원_설문.pdf" download class="btn-green">📄 신입사원 설문지 받기</a>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="section-title">지원 문의</h2>
+            <div style="background:var(--color-bg-light);border-radius:var(--border-radius-lg);padding:40px;text-align:center;">
+              <p style="font-size:15px;color:var(--color-gray);margin-bottom:24px;line-height:1.7;">채용 공고 및 지원 방법은 담당자에게 직접 문의해 주세요.</p>
+              <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="tel:0414117800" class="btn btn-primary">041-411-7800</a>
+                <a href="mailto:shinwonjm@hanmail.net" class="btn btn-outline">이메일 문의</a>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
@@ -132,11 +210,11 @@
           <p class="footer__info-title">신원스틸(주)</p>
           <div class="footer__address">
             <div class="footer__address-item"><span class="footer__address-label">대표이사</span><span class="footer__address-value">하태진</span></div>
-            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-XXXXX</span></div>
+            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-08113</span></div>
             <div class="footer__address-item"><span class="footer__address-label">주소</span><span class="footer__address-value">충남 천안시 서북구 성환읍 신방로 108 (우31007)</span></div>
             <div class="footer__address-item"><span class="footer__address-label">TEL</span><span class="footer__address-value"><a href="tel:0414117800">041-411-7800</a></span></div>
             <div class="footer__address-item"><span class="footer__address-label">FAX</span><span class="footer__address-value">041-581-2600</span></div>
-            <div class="footer__address-item"><span class="footer__address-label">사업자등록번호</span><span class="footer__address-value">312-81-08113</span></div><div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div>
+            <div class="footer__address-item"><span class="footer__address-label">Email</span><span class="footer__address-value"><a href="mailto:shinwonjm@hanmail.net">shinwonjm@hanmail.net</a></span></div>
           </div>
         </address>
       </div>
@@ -150,4 +228,5 @@
     </div>
   </footer>
   <script src="../js/common.js"></script>
-</body></html>
+</body>
+</html>
