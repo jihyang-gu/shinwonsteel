@@ -104,18 +104,55 @@
     });
   }
 
-  /* 현재 페이지 메뉴 활성화 */
+  /* -----------------------------------------------------------------------
+   * 현재 페이지 메뉴 자동 활성화
+   * 전체 pathname 대신 파일명(마지막 세그먼트)만 비교해서
+   * 상대경로 href="about.html"도 /shinwonsteel/company/about.html에 매칭됨
+   * --------------------------------------------------------------------- */
   function initActiveMenu() {
-    const currentPath = window.location.pathname;
-    qsa('.mega-menu__link, .mobile-submenu__link, .sub-nav__link').forEach(function (link) {
+    // 현재 페이지 파일명 추출 (예: "about.html")
+    const currentFile = window.location.pathname.split('/').filter(Boolean).pop() || 'index.html';
+
+    // sub-nav 링크 활성화
+    qsa('.sub-nav__link').forEach(function (link) {
       const href = link.getAttribute('href');
-      if (!href || href.startsWith('http')) return;
-      const linkPath = new URL(href, window.location.origin).pathname;
-      if (linkPath === currentPath) {
+      if (!href) return;
+      // href에서 파일명만 추출 (예: "../company/about.html" → "about.html")
+      const linkFile = href.split('/').pop();
+      if (linkFile === currentFile) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
+      } else {
+        // 혹시 이전에 하드코딩된 active가 있으면 제거
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
       }
     });
+
+    // GNB 메가메뉴 링크 활성화
+    qsa('.mega-menu__link').forEach(function (link) {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const linkFile = href.split('/').pop();
+      if (linkFile === currentFile) {
+        link.classList.add('active');
+      }
+    });
+
+    // 모바일 서브메뉴 링크 활성화
+    qsa('.mobile-submenu__link').forEach(function (link) {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const linkFile = href.split('/').pop();
+      if (linkFile === currentFile) {
+        link.classList.add('active');
+        // 해당 아코디언 자동 오픈
+        const item = link.closest('.mobile-menu__item');
+        if (item) item.classList.add('open');
+      }
+    });
+
+    // GNB 상위 메뉴 아이템 활성화 (메가메뉴 안에 active 링크가 있으면)
     qsa('.gnb__menu-item').forEach(function (item) {
       const hasActive = qsa('.mega-menu__link.active', item).length > 0;
       if (hasActive) item.classList.add('active');
