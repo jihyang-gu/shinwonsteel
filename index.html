@@ -42,26 +42,24 @@
       color: #ffffff !important;
     }
 
-    /* ── 뉴스 슬라이더 래퍼 ── */
-    .news-slider-wrap {
+    /* ── 뉴스 슬라이더 전체 구조 ── */
+    .news-slider-outer {
+      /* 화살표가 이 영역 기준으로 위치 */
       position: relative;
-      /* 카드가 컨테이너 밖으로 보이도록 overflow visible */
-      overflow: visible;
-      /* 좌우 화살표 공간 확보 */
-      margin: 0 56px;
+      padding: 0 56px;
     }
-    /* 슬라이더 내부만 overflow hidden */
+    /* clip: 카드 영역만 잘라냄, 오른쪽 fade 포함 */
     .news-slider-clip {
       overflow: hidden;
       position: relative;
     }
-    /* 오른쪽 fade 그라디언트 */
+    /* 오른쪽 10~15% 노출 fade */
     .news-slider-clip::after {
       content: '';
       position: absolute;
       top: 0; right: 0; bottom: 0;
-      width: 80px;
-      background: linear-gradient(to right, transparent, #0d1829);
+      width: 120px;
+      background: linear-gradient(to right, transparent 0%, #0d1829 100%);
       pointer-events: none;
       z-index: 2;
     }
@@ -69,14 +67,17 @@
     /* ── 슬라이더 트랙 ── */
     .news-slider-track {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      /* 트랙이 카드 너비 기준으로 늘어남 */
+      width: max-content;
     }
 
-    /* ── 뉴스 카드 ── */
+    /* ── 뉴스 카드: JS로 너비 주입, 여기서는 고정값 기본 ── */
     .news-slider-track .news-card {
-      min-width: calc((100% - 48px) / 3);
-      height: 220px;
+      width: 340px;          /* JS에서 덮어씀 */
+      height: 220px;         /* 고정 높이 */
+      flex-shrink: 0;
       background: var(--color-white);
       border: none;
       border-radius: var(--border-radius-lg);
@@ -84,16 +85,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex-shrink: 0;
       box-sizing: border-box;
       transition: box-shadow 0.25s, transform 0.25s;
     }
     .news-slider-track .news-card:hover {
-      box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.2);
       transform: translateY(-4px);
     }
     .news-card__meta {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px; flex-shrink: 0;
     }
     .news-card__date {
       font-size: 12px; color: var(--color-gray-light); font-weight: 500;
@@ -102,77 +102,64 @@
       background: var(--color-primary); color: #fff;
       font-size: 11px; font-weight: 700;
       padding: 2px 8px; border-radius: 3px;
+      flex-shrink: 0;
     }
     .news-slider-track .news-card h3 {
       font-size: 15px;
       font-weight: 600;
       color: var(--color-dark);
       line-height: 1.55;
-      flex: 1;
-      /* 3줄 말줄임 */
+      /* 고정 3줄 말줄임 */
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      margin-bottom: 16px;
+      flex: 1;
+      margin: 12px 0 0;
     }
     .news-slider-track .news-card .text-link {
       font-size: 13px;
-      margin-top: auto;
       flex-shrink: 0;
+      margin-top: 14px;
     }
 
-    /* ── 화살표 버튼 ── */
+    /* ── 화살표 ── */
     .news-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       width: 44px; height: 44px;
       background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.25);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer;
       z-index: 10;
       transition: background 0.15s, border-color 0.15s;
+      flex-shrink: 0;
     }
-    .news-arrow:hover {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
-    }
-    .news-arrow svg { stroke: #ffffff; }
-    .news-arrow--prev { left: -56px; }
-    .news-arrow--next { right: -56px; }
+    .news-arrow:hover { background: var(--color-primary); border-color: var(--color-primary); }
+    .news-arrow svg { stroke: #fff; }
+    .news-arrow--prev { left: 4px; }
+    .news-arrow--next { right: 4px; }
 
     /* ── 도트 ── */
     .news-dots {
-      display: flex; justify-content: center; gap: 8px; margin-top: 32px;
+      display: flex; justify-content: center; gap: 8px; margin-top: 28px;
     }
     .news-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
       background: rgba(255,255,255,0.25);
-      cursor: pointer;
+      cursor: pointer; border: none; padding: 0;
       transition: background 0.2s, transform 0.2s;
-      border: none; padding: 0;
     }
-    .news-dot.active {
-      background: var(--color-primary);
-      transform: scale(1.3);
-    }
+    .news-dot.active { background: var(--color-primary); transform: scale(1.3); }
 
     /* ── 반응형 ── */
-    @media (max-width: 1023px) {
-      .news-slider-wrap { margin: 0 48px; }
-      .news-slider-track .news-card { min-width: calc((100% - 24px) / 2); }
-      .news-arrow--prev { left: -48px; }
-      .news-arrow--next { right: -48px; }
-    }
     @media (max-width: 767px) {
-      .news-slider-wrap { margin: 0 40px; }
-      .news-slider-track .news-card { min-width: 100%; height: auto; min-height: 180px; }
-      .news-arrow--prev { left: -40px; }
-      .news-arrow--next { right: -40px; }
+      .news-slider-outer { padding: 0 40px; }
+      .news-arrow--prev { left: 0; }
+      .news-arrow--next { right: 0; }
     }
   </style>
 </head>
@@ -346,7 +333,7 @@
       <div class="container">
         <span class="label">MEDIA</span>
         <h2 id="news-heading">언론 속 신원스틸</h2>
-        <div class="news-slider-wrap" style="margin-top:52px;">
+        <div class="news-slider-outer" style="margin-top:52px;">
           <!-- 이전 버튼 -->
           <button class="news-arrow news-arrow--prev" id="newsPrev" aria-label="이전 기사">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -398,30 +385,44 @@
 
     <script>
     (function(){
-      var track = document.getElementById('newsTrack');
+      var clip    = document.querySelector('.news-slider-clip');
+      var track   = document.getElementById('newsTrack');
       var dotsWrap = document.getElementById('newsDots');
       var prevBtn = document.getElementById('newsPrev');
       var nextBtn = document.getElementById('newsNext');
-      var cards = track.querySelectorAll('.news-card');
-      var total = cards.length;
+      var cards   = track.querySelectorAll('.news-card');
+      var total   = cards.length;
       var current = 0;
+      var GAP     = 20;
+      // 4번째 카드를 10~12% 노출 → 카드 너비 = (clip - peek) / perView - gap 여유
+      var PEEK    = 0.12; // 다음 카드 노출 비율
 
       function getPerView() {
         return window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
       }
 
-      function getCardWidth() {
-        return cards[0].offsetWidth + 24; // card width + gap
+      function calcCardWidth() {
+        var perView  = getPerView();
+        var clipW    = clip.offsetWidth;
+        // 3장 + peek(12%) = (clipW - gaps) / (perView + PEEK)
+        var cardW = (clipW - GAP * (perView - 1)) / (perView + PEEK);
+        return Math.floor(cardW);
+      }
+
+      function applyCardWidth() {
+        var w = calcCardWidth();
+        cards.forEach(function(c){ c.style.width = w + 'px'; });
+        track.style.gap = GAP + 'px';
       }
 
       function buildDots() {
         dotsWrap.innerHTML = '';
-        var perView = getPerView();
+        var perView  = getPerView();
         var maxSlide = total - perView;
         for (var i = 0; i <= maxSlide; i++) {
           var dot = document.createElement('button');
           dot.className = 'news-dot' + (i === current ? ' active' : '');
-          dot.setAttribute('aria-label', (i+1) + '번째 슬라이드');
+          dot.setAttribute('aria-label', (i + 1) + '번째 슬라이드');
           dot.dataset.idx = i;
           dot.addEventListener('click', function(){ goTo(parseInt(this.dataset.idx)); });
           dotsWrap.appendChild(dot);
@@ -429,12 +430,13 @@
       }
 
       function goTo(idx) {
-        var perView = getPerView();
+        var perView  = getPerView();
         var maxSlide = total - perView;
         if (idx < 0) idx = 0;
         if (idx > maxSlide) idx = maxSlide;
         current = idx;
-        track.style.transform = 'translateX(-' + (getCardWidth() * current) + 'px)';
+        var cardW = calcCardWidth();
+        track.style.transform = 'translateX(-' + ((cardW + GAP) * current) + 'px)';
         dotsWrap.querySelectorAll('.news-dot').forEach(function(d, i){
           d.classList.toggle('active', i === current);
         });
@@ -454,12 +456,17 @@
       }, {passive:true});
 
       // 초기화
-      buildDots();
-      prevBtn.style.opacity = '0.35';
+      function init() {
+        applyCardWidth();
+        buildDots();
+        goTo(0);
+      }
+      init();
 
       // 반응형
       window.addEventListener('resize', function(){
         current = 0;
+        applyCardWidth();
         buildDots();
         goTo(0);
       });
