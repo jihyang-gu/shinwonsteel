@@ -16,8 +16,6 @@
   <link rel="stylesheet" href="css/pages/main.css">
   <style>
     .hero::after { display: none; }
-    @media (min-width: 768px) { .ideology-cards { grid-template-columns: repeat(3, 1fr) !important; } }
-    @media (max-width: 767px) { .ideology-cards { grid-template-columns: repeat(2, 1fr) !important; } }
     .facility-tile {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -30,10 +28,78 @@
     .facility-tile p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.7; margin:0; }
     @media (max-width: 900px) { .facility-tiles { grid-template-columns: repeat(3, 1fr) !important; } }
     @media (max-width: 600px) { .facility-tiles { grid-template-columns: repeat(2, 1fr) !important; } }
-    .news-card { border-top: 2px solid var(--color-border); padding-top: 24px; }
-    .news-card__source { background:var(--color-primary); color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:3px; }
     .about-section .two-col { align-items: center; }
     .about-section .two-col__image img { border-radius: var(--border-radius-lg); }
+
+    /* 뉴스 슬라이더 */
+    .news-slider-wrap { position: relative; overflow: hidden; }
+    .news-slider-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+    .news-slider-track .news-card {
+      min-width: calc(33.333% - 16px);
+      margin-right: 24px;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .news-slider-track .news-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+    .news-card__source { background:var(--color-primary); color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:3px; }
+    /* 화살표 버튼 */
+    .news-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px; height: 44px;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+    .news-arrow:hover { background: var(--color-primary); border-color: var(--color-primary); }
+    .news-arrow:hover svg { stroke: #fff; }
+    .news-arrow svg { stroke: var(--color-dark); }
+    .news-arrow--prev { left: -22px; }
+    .news-arrow--next { right: -22px; }
+    /* 도트 */
+    .news-dots {
+      display: flex; justify-content: center; gap: 8px; margin-top: 32px;
+    }
+    .news-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--color-border);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      padding: 0;
+    }
+    .news-dot.active {
+      background: var(--color-primary);
+      transform: scale(1.3);
+    }
+    @media (max-width: 1023px) {
+      .news-slider-track .news-card { min-width: calc(50% - 12px); }
+    }
+    @media (max-width: 767px) {
+      .news-slider-track .news-card { min-width: 100%; margin-right: 16px; }
+      .news-arrow--prev { left: -8px; }
+      .news-arrow--next { right: -8px; }
+    }
   </style>
 </head>
 <body>
@@ -159,65 +225,6 @@
       </div>
     </section>
 
-    <!-- 미래 비전 -->
-    <section class="ideology-section" aria-labelledby="smart-heading">
-      <div class="container">
-        <span class="label label--white">미래 비전</span>
-        <h2 id="smart-heading">버넥트(VIRNECT)와 함께,<br>더 스마트한 후판 가공 현장</h2>
-        <p>2025년 코스닥 상장사 버넥트(VIRNECT)의 자회사로 편입되어<br>AI·DX 기반 스마트팩토리로의 전환을 추진합니다.</p>
-        <div class="ideology-cards" style="grid-template-columns:repeat(3,1fr);gap:20px;">
-          <div class="ideology-card fade-up">
-            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
-            <h3>품질 관리</h3>
-            <p>AI 영상인식 기반 불량 검출 및 실시간 품질 모니터링으로 제품 신뢰성을 보장합니다.</p>
-          </div>
-          <div class="ideology-card fade-up" data-delay="100">
-            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-            <h3>생산 관리</h3>
-            <p>AI 기반 실시간 데이터 분석 및 이상 감지로 공정 전반의 생산성을 최적화합니다.</p>
-          </div>
-          <div class="ideology-card fade-up" data-delay="200">
-            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
-            <h3>납기 관리</h3>
-            <p>디지털 트윈 기반 공정 시뮬레이션으로 납기를 정확히 예측하고 단납기를 실현합니다.</p>
-          </div>
-          <div class="ideology-card fade-up" data-delay="300">
-            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg></span>
-            <h3>재고 관리</h3>
-            <p>스마트 자재관리 시스템으로 원자재 및 완제품 재고 현황을 실시간으로 파악합니다.</p>
-          </div>
-          <div class="ideology-card fade-up" data-delay="400">
-            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
-            <h3>안전 관리</h3>
-            <p>AI 영상 분석 기반 안전관리 및 XR 실감형 안전 교육훈련으로 현장 안전 수준을 높입니다.</p>
-          </div>
-          <div class="ideology-card fade-up" data-delay="500">
-            <span class="ideology-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.07A1 1 0 0121 8.847V6a2 2 0 00-2-2H5a2 2 0 00-2 2v2.847a1 1 0 00.447.832L8 10"/><rect x="3" y="10" width="18" height="11" rx="2"/></svg></span>
-            <h3>원격 협업</h3>
-            <p>AR 기반 원격 협업 시스템 도입으로 현장과 사무실 간 실시간 소통 및 기술 지원이 가능합니다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 취급강종 -->
-    <section class="section grades-section" aria-labelledby="grades-heading">
-      <div class="container">
-        <span class="label">STEEL GRADES</span>
-        <h2 id="grades-heading">취급 강종</h2>
-        <p class="section-desc">SS/SM/SB/ASTM 다양한 재질 취급 · 두께 300mm 이하 대응 · 스테인리스 절단 가능</p>
-        <div class="grades-grid">
-          <div class="grade-card fade-up"><p class="grade-card__name">SS400</p><p class="grade-card__spec">일반 구조용 압연 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">건축·교량·선박·차량 등 일반 구조물에 가장 널리 사용되는 범용 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">건축</span><span class="grade-card__tag">교량</span><span class="grade-card__tag">선박</span></div></div>
-          <div class="grade-card fade-up" data-delay="100"><p class="grade-card__name">SM490</p><p class="grade-card__spec">용접 구조용 압연 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">고강도 용접 구조물 및 건설기계에 적합한 우수한 용접성을 갖춘 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">고강도</span><span class="grade-card__tag">용접성</span></div></div>
-          <div class="grade-card fade-up" data-delay="200"><p class="grade-card__name">A516-70</p><p class="grade-card__spec">압력 용기용 탄소 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">열교환기 및 압력 용기 제작에 최적화된 ASTM 규격의 고강도 탄소강입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">압력용기</span><span class="grade-card__tag">열교환기</span></div></div>
-          <div class="grade-card fade-up" data-delay="100"><p class="grade-card__name">A283</p><p class="grade-card__spec">저탄소 구조용 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">저압 용기 및 탱크 제작에 사용되는 ASTM 규격의 저탄소 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">저압용기</span><span class="grade-card__tag">탱크</span></div></div>
-          <div class="grade-card fade-up" data-delay="200"><p class="grade-card__name">A36</p><p class="grade-card__spec">구조용 탄소 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">건축 구조물 및 교량에 광범위하게 사용되는 ASTM 표준 범용 탄소강입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">ASTM</span><span class="grade-card__tag">범용</span></div></div>
-          <div class="grade-card fade-up" data-delay="300"><p class="grade-card__name">SLAB</p><p class="grade-card__spec">연속 주조 슬라브</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">후판 소재로 사용되는 연속 주조 슬라브로 정밀 모형 절단 가공에 활용됩니다.</p><div class="grade-card__tags"><span class="grade-card__tag">소재</span><span class="grade-card__tag">모형절단</span></div></div>
-        </div>
-        <p style="margin-top:24px;font-size:13px;color:var(--color-gray);">※ 상세 재고 현황은 공개하지 않으며, 별도 문의를 통해 안내드립니다. <a href="contact/quote.html" style="color:var(--color-primary);">견적 문의하기 →</a></p>
-      </div>
-    </section>
-
     <!-- 생산설비 -->
     <section class="facility-section-new" aria-labelledby="facility-heading" style="background:#0a0f1e;padding:0 0 80px;">
       <div style="width:100%;height:340px;position:relative;overflow:hidden;">
@@ -242,30 +249,129 @@
       </div>
     </section>
 
+    <!-- 취급강종 -->
+    <section class="section grades-section" aria-labelledby="grades-heading">
+      <div class="container">
+        <span class="label">STEEL GRADES</span>
+        <h2 id="grades-heading">취급 강종</h2>
+        <p class="section-desc">SS/SM/SB/ASTM 다양한 재질 취급 · 두께 300mm 이하 대응 · 스테인리스 절단 가능</p>
+        <div class="grades-grid">
+          <div class="grade-card fade-up"><p class="grade-card__name">SS400</p><p class="grade-card__spec">일반 구조용 압연 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">건축·교량·선박·차량 등 일반 구조물에 가장 널리 사용되는 범용 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">건축</span><span class="grade-card__tag">교량</span><span class="grade-card__tag">선박</span></div></div>
+          <div class="grade-card fade-up" data-delay="100"><p class="grade-card__name">SM490</p><p class="grade-card__spec">용접 구조용 압연 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">고강도 용접 구조물 및 건설기계에 적합한 우수한 용접성을 갖춘 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">고강도</span><span class="grade-card__tag">용접성</span></div></div>
+          <div class="grade-card fade-up" data-delay="200"><p class="grade-card__name">A516-70</p><p class="grade-card__spec">압력 용기용 탄소 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">열교환기 및 압력 용기 제작에 최적화된 ASTM 규격의 고강도 탄소강입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">압력용기</span><span class="grade-card__tag">열교환기</span></div></div>
+          <div class="grade-card fade-up" data-delay="100"><p class="grade-card__name">A283</p><p class="grade-card__spec">저탄소 구조용 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">저압 용기 및 탱크 제작에 사용되는 ASTM 규격의 저탄소 강재입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">저압용기</span><span class="grade-card__tag">탱크</span></div></div>
+          <div class="grade-card fade-up" data-delay="200"><p class="grade-card__name">A36</p><p class="grade-card__spec">구조용 탄소 강재</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">건축 구조물 및 교량에 광범위하게 사용되는 ASTM 표준 범용 탄소강입니다.</p><div class="grade-card__tags"><span class="grade-card__tag">ASTM</span><span class="grade-card__tag">범용</span></div></div>
+          <div class="grade-card fade-up" data-delay="300"><p class="grade-card__name">SLAB</p><p class="grade-card__spec">연속 주조 슬라브</p><div class="grade-card__divider" aria-hidden="true"></div><p class="grade-card__desc">후판 소재로 사용되는 연속 주조 슬라브로 정밀 모형 절단 가공에 활용됩니다.</p><div class="grade-card__tags"><span class="grade-card__tag">소재</span><span class="grade-card__tag">모형절단</span></div></div>
+        </div>
+        <p style="margin-top:24px;font-size:13px;color:var(--color-gray);">※ 상세 재고 현황은 공개하지 않으며, 별도 문의를 통해 안내드립니다. <a href="contact/quote.html" style="color:var(--color-primary);">견적 문의하기 →</a></p>
+      </div>
+    </section>
+
     <!-- 언론 -->
     <section class="section news-section" aria-labelledby="news-heading">
       <div class="container">
         <span class="label">MEDIA</span>
         <h2 id="news-heading">언론 속 신원스틸</h2>
-        <div class="news-grid">
-          <article class="news-card fade-up">
-            <div class="news-card__meta"><span class="news-card__date">1991.09</span><span class="news-card__source">국민일보</span></div>
-            <h3>日기술 따라잡으려면 분업·전문화 시급</h3>
-            <a href="http://newslibrary.naver.com/viewer/index.nhn?articleId=1991091800329117006" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
-          </article>
-          <article class="news-card fade-up" data-delay="200">
-            <div class="news-card__meta"><span class="news-card__date">2009.05</span><span class="news-card__source">MK</span></div>
-            <h3>인식을 전환하는 정책으로 중소기업의 인재난 해결</h3>
-            <a href="http://www.welder.or.kr/Report/SpecialReport2009/Cutiingwork/Interview/Shinwon.html" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
-          </article>
-          <article class="news-card fade-up" data-delay="400">
-            <div class="news-card__meta"><span class="news-card__date">2013.06</span><span class="news-card__source">스틸데일리</span></div>
-            <h3>후판시장 불황? 굴하지 않아</h3>
-            <a href="http://www.snmnews.com/news/articleView.html?idxno=309968" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
-          </article>
+        <div class="news-slider-wrap" style="margin-top:52px;">
+          <!-- 이전 버튼 -->
+          <button class="news-arrow news-arrow--prev" id="newsPrev" aria-label="이전 기사">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <!-- 슬라이더 트랙 (최신순) -->
+          <div class="news-slider-track" id="newsTrack">
+            <article class="news-card">
+              <div class="news-card__meta"><span class="news-card__date">2026.02.27</span><span class="news-card__source">전자신문</span></div>
+              <h3>버넥트, 신원스틸 현장서 로봇 자율 순찰 통합 모니터링 검증 AI 기반 고도화 추진</h3>
+              <a href="https://www.etnews.com/20260226000393" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card__meta"><span class="news-card__date">2026.01.21</span><span class="news-card__source">매일경제</span></div>
+              <h3>버넥트, 신원스틸 공장에 로봇 적용 첫 단계 구현 완료</h3>
+              <a href="https://www.mk.co.kr/news/business/11938119" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card__meta"><span class="news-card__date">2026.01.16</span><span class="news-card__source">공학저널</span></div>
+              <h3>AI와 AR이 결합된 스마트고글, 산업안전 패러다임 제시</h3>
+              <a href="http://www.engjournal.co.kr/news/articleView.html?idxno=3611" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card__meta"><span class="news-card__date">2025.11.01</span><span class="news-card__source">철강금속신문</span></div>
+              <h3>버넥트, 철강가공사 '신원스틸' 인수, 제조현장서 AI실증 본격화</h3>
+              <a href="https://www.snmnews.com/news/articleView.html?idxno=560156" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card__meta"><span class="news-card__date">2013.06</span><span class="news-card__source">철강금속신문</span></div>
+              <h3>(우수강소기업) 신원스틸, "후판시장 불황? 굴하지 않아"</h3>
+              <a href="https://www.snmnews.com/news/articleView.html?idxno=309968" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card__meta"><span class="news-card__date">2009.05</span><span class="news-card__source">매탈코리아</span></div>
+              <h3>인식을 전환하는 정책으로 중소기업의 인재난 해결</h3>
+              <a href="http://www.welder.or.kr/Report/SpecialReport2009/Cutiingwork/Interview/Shinwon.html" target="_blank" rel="noopener noreferrer" class="text-link">기사 보기 →</a>
+            </article>
+          </div>
+          <!-- 다음 버튼 -->
+          <button class="news-arrow news-arrow--next" id="newsNext" aria-label="다음 기사">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
+        <!-- 도트 네비게이션 -->
+        <div class="news-dots" id="newsDots"></div>
       </div>
     </section>
+
+    <script>
+    (function(){
+      var track = document.getElementById('newsTrack');
+      var dotsWrap = document.getElementById('newsDots');
+      var prevBtn = document.getElementById('newsPrev');
+      var nextBtn = document.getElementById('newsNext');
+      var cards = track.querySelectorAll('.news-card');
+      var total = cards.length;
+      var perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      var current = 0;
+      var maxSlide = total - perView;
+
+      // 도트 생성
+      for (var i = 0; i <= maxSlide; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'news-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', (i+1) + '번째 슬라이드');
+        dot.dataset.idx = i;
+        dot.addEventListener('click', function(){ goTo(parseInt(this.dataset.idx)); });
+        dotsWrap.appendChild(dot);
+      }
+
+      function getCardWidth() {
+        return cards[0].offsetWidth + 24;
+      }
+
+      function goTo(idx) {
+        if (idx < 0) idx = 0;
+        if (idx > maxSlide) idx = maxSlide;
+        current = idx;
+        track.style.transform = 'translateX(-' + (getCardWidth() * current) + 'px)';
+        dotsWrap.querySelectorAll('.news-dot').forEach(function(d, i){
+          d.classList.toggle('active', i === current);
+        });
+        prevBtn.style.opacity = current === 0 ? '0.3' : '1';
+        nextBtn.style.opacity = current === maxSlide ? '0.3' : '1';
+      }
+
+      prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+      nextBtn.addEventListener('click', function(){ goTo(current + 1); });
+
+      // 초기 상태
+      prevBtn.style.opacity = '0.3';
+
+      // 반응형 대응
+      window.addEventListener('resize', function(){
+        perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+        maxSlide = total - perView;
+        goTo(0);
+      });
+    })();
+    </script>
 
     <!-- CTA -->
     <section class="section cta-section" aria-labelledby="cta-heading">
