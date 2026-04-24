@@ -32,7 +32,7 @@
     var counters = [
       { selector: '.stats__item:nth-child(1) strong', target: 35, suffix: '+', duration: 1800 },
       { selector: '.stats__item:nth-child(2) strong', target: 12, suffix: '종+', duration: 1200 },
-      { selector: '.stats__item:nth-child(4) strong', target: 2, suffix: '건', duration: 1200 },
+      { selector: '.stats__item:nth-child(4) strong', target: 1, suffix: '건', duration: 1200 },
     ];
     var animated = false;
     if (!('IntersectionObserver' in window)) {
