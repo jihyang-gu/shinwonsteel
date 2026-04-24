@@ -950,13 +950,15 @@
 
   .hero__btns {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .hero__btns .btn-primary,
-  .hero__btns .btn-outline {
+  .hero__btns .btn-outline,
+  .hero__btns .btn-outline-dark {
     width: 100%;
     justify-content: center;
+    text-align: center;
   }
 
   /* 스크롤 화살표 숨김 */
