@@ -65,14 +65,17 @@
 
     hamburger.addEventListener('click', function () {
       const isOpen = mobileMenu.classList.contains('open');
+      const gnb = qs('.gnb');
       if (isOpen) {
         mobileMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        if (gnb) gnb.classList.remove('menu-open');
       } else {
         mobileMenu.classList.add('open');
         hamburger.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
+        if (gnb) gnb.classList.add('menu-open');
       }
     });
 
