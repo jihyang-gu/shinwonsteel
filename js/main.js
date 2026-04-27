@@ -26,7 +26,7 @@
     var statsSection = qs('.stats');
     if (!statsSection) return;
     var counters = [
-      { selector: '.stats__item:nth-child(1) strong', target: 36,   suffix: '+',  duration: 1800 },
+      { selector: '.stats__item:nth-child(1) strong', target: 35,   suffix: '+',  duration: 1800 },
       { selector: '.stats__item:nth-child(2) strong', target: 12,   suffix: '종+', duration: 1200 },
       { selector: '.stats__item:nth-child(3) strong', target: 1500, suffix: '톤',  duration: 2000 },
       // 4번째(기업 신용등급 A등급)는 텍스트형이므로 카운터 제외
@@ -59,7 +59,11 @@
     if (!arrow) return;
     arrow.addEventListener('click', function () {
       var next = qs('.stats');
-      if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (next) {
+        var gnbHeight = 72;
+        var top = next.getBoundingClientRect().top + window.pageYOffset - gnbHeight;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
     });
   }
   function init() {
