@@ -10,77 +10,81 @@
   <link rel="stylesheet" href="../fonts/pretendard.css">
   <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
   <style>
-    /* ── 타임라인 재설계: 연도(좌) | 세로선+불렛(중) | 내용(우) ── */
+    /* ── 타임라인: 연도(좌) | 세로선+불렛(중) | 내용(우) ── */
     .timeline {
       position: relative;
       padding-left: 0;
       margin-bottom: 64px;
     }
-    .timeline::before { display: none; }
+    .timeline::before { display: none !important; }
 
     .timeline__item {
-      display: grid !important;
-      grid-template-columns: 80px 40px 1fr !important;
+      display: flex !important;
+      flex-direction: row !important;
       align-items: flex-start !important;
       gap: 0 !important;
-      padding-bottom: 40px;
+      padding: 0 0 40px 0 !important;
       position: relative;
     }
-    .timeline__item:last-child {
-      padding-bottom: 0;
-    }
+    .timeline__item:last-child { padding-bottom: 0 !important; }
 
-    /* 연도 — 좌측 고정 */
+    /* 연도 */
     .timeline__year {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1;
-      padding-top: 2px;
-      text-align: right;
-      padding-right: 0;
-      min-width: unset;
+      width: 72px !important;
+      min-width: 72px !important;
+      font-size: 20px !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+      line-height: 1.4 !important;
+      padding: 0 !important;
+      text-align: right !important;
+      flex-shrink: 0 !important;
     }
 
-    /* 중앙 세로선 + 불렛 컬럼 */
+    /* 중앙 세로선 */
     .timeline__item::before {
-      content: '';
-      position: absolute;
-      left: 99px;
-      top: 10px;
-      bottom: -30px;
-      width: 2px;
-      background: var(--color-border);
-      z-index: 0;
+      content: '' !important;
+      display: block !important;
+      width: 2px !important;
+      background: var(--color-border) !important;
+      position: absolute !important;
+      left: 92px !important;
+      top: 14px !important;
+      bottom: -26px !important;
+      z-index: 0 !important;
     }
-    .timeline__item:last-child::before {
-      display: none;
-    }
+    .timeline__item:last-child::before { display: none !important; }
+
+    /* 불렛 */
     .timeline__item::after {
-      content: '';
-      position: absolute;
-      left: 91px;
-      top: 3px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 2px var(--color-primary);
-      z-index: 1;
+      content: '' !important;
+      display: block !important;
+      width: 14px !important;
+      height: 14px !important;
+      border-radius: 50% !important;
+      background: var(--color-primary) !important;
+      border: 2px solid #fff !important;
+      box-shadow: 0 0 0 2px var(--color-primary) !important;
+      position: absolute !important;
+      left: 86px !important;
+      top: 5px !important;
+      z-index: 1 !important;
+      flex-shrink: 0 !important;
     }
 
-    /* 내용 — 우측 */
+    /* 내용 */
     .timeline__content {
-      padding-left: 24px;
-      padding-top: 0;
-      flex: unset;
+      flex: 1 !important;
+      padding-left: 36px !important;
+      padding-top: 0 !important;
+      margin: 0 !important;
     }
     .timeline__content p {
-      font-size: 15px;
-      color: var(--color-dark);
-      line-height: 1.7;
-      margin: 0;
+      font-size: 15px !important;
+      color: var(--color-dark) !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+      word-break: keep-all !important;
     }
   </style>
 </head>
