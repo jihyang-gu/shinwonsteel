@@ -9,6 +9,65 @@
   <link rel="preload" as="style" href="../fonts/pretendard.css">
   <link rel="stylesheet" href="../fonts/pretendard.css">
   <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
+  <style>
+    /* 타임라인 불렛 정렬 수정 */
+    .timeline { padding-left: 0; }
+    .timeline::before { display: none; }
+    .timeline__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      padding: 0 0 32px 0;
+      position: relative;
+    }
+    /* 연도 왼쪽 세로선 */
+    .timeline__item::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      bottom: -20px;
+      width: 2px;
+      background: var(--color-border);
+      z-index: 0;
+    }
+    .timeline__item:last-child::before {
+      display: none;
+    }
+    /* 불렛 — 연도 숫자 앞에 위치 */
+    .timeline__item::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--color-primary);
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .timeline__year {
+      min-width: 60px;
+      padding-left: 32px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-primary);
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .timeline__content {
+      padding-top: 3px;
+      flex: 1;
+    }
+    .timeline__content p {
+      font-size: 15px;
+      color: var(--color-dark);
+      line-height: 1.7;
+    }
+  </style>
 </head>
 <body>
   <header class="gnb" id="gnb"><div class="gnb__inner"><a href="../index.html" class="gnb__logo"><span class="gnb__logo-text">SHINWON STEEL</span></a><nav class="gnb__nav"><ul class="gnb__menu"><li class="gnb__menu-item"><a href="../company/about.html" class="gnb__menu-link">회사개요</a><div class="mega-menu" aria-hidden="true"><a href="../company/about.html" class="mega-menu__link">회사소개</a><a href="../company/grades.html" class="mega-menu__link">취급강종</a><a href="../company/facility.html" class="mega-menu__link">생산설비</a><a href="../company/location.html" class="mega-menu__link">오시는길</a></div></li><li class="gnb__menu-item"><a href="../job/guide.html" class="gnb__menu-link">입사안내</a><div class="mega-menu" aria-hidden="true"><a href="../job/guide.html" class="mega-menu__link">채용안내</a><a href="../job/hr.html" class="mega-menu__link">인사제도</a></div></li></ul></nav><div class="gnb__actions"><a href="../contact/quote.html" class="gnb__cta">견적문의</a><button class="gnb__hamburger" aria-expanded="false" aria-label="메뉴 열기" aria-controls="mobileMenu"><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span><span class="gnb__hamburger-line"></span></button></div></div></header>
@@ -54,7 +113,7 @@
           <div class="timeline__item"><span class="timeline__year">2006</span><div class="timeline__content"><p>상호를 "신원스틸(주)"로 변경 / 경영혁신형 중소기업 선정</p></div></div>
           <div class="timeline__item"><span class="timeline__year">2005</span><div class="timeline__content"><p>영남지역 김해공장 가동 (계열사 삼백스틸 설립)</p></div></div>
           <div class="timeline__item"><span class="timeline__year">2001</span><div class="timeline__content"><p>ISO 9001 인증 획득 / 피어싱 공업 특허 출원 / 신한은행 유망중소기업 선정</p></div></div>
-          <div class="timeline__item"><span class="timeline__year">1990</span><div class="timeline__content"><p>신원스틸 성환공장 설립 — 일본 Maehara社(49%) 합작기업으로 창업</p></div></div>
+          <div class="timeline__item"><span class="timeline__year">1990</span><div class="timeline__content"><p>신원스틸 성환공장 설립 및 창업</p></div></div>
         </div>
       </section>
     </div>
