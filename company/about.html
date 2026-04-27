@@ -10,23 +10,44 @@
   <link rel="stylesheet" href="../fonts/pretendard.css">
   <link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/common.css"><link rel="stylesheet" href="../css/pages/sub.css">
   <style>
-    /* 타임라인 불렛 정렬 수정 */
-    .timeline { padding-left: 0; }
+    /* ── 타임라인 재설계: 연도(좌) | 세로선+불렛(중) | 내용(우) ── */
+    .timeline {
+      position: relative;
+      padding-left: 0;
+      margin-bottom: 64px;
+    }
     .timeline::before { display: none; }
+
     .timeline__item {
-      display: flex;
+      display: grid;
+      grid-template-columns: 80px 40px 1fr;
       align-items: flex-start;
-      gap: 0;
-      padding: 0 0 32px 0;
+      padding-bottom: 40px;
       position: relative;
     }
-    /* 연도 왼쪽 세로선 */
+    .timeline__item:last-child {
+      padding-bottom: 0;
+    }
+
+    /* 연도 — 좌측 고정 */
+    .timeline__year {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      padding-top: 2px;
+      text-align: right;
+      padding-right: 0;
+      min-width: unset;
+    }
+
+    /* 중앙 세로선 + 불렛 컬럼 */
     .timeline__item::before {
       content: '';
       position: absolute;
-      left: 10px;
-      top: 12px;
-      bottom: -20px;
+      left: 99px;
+      top: 10px;
+      bottom: -30px;
       width: 2px;
       background: var(--color-border);
       z-index: 0;
@@ -34,38 +55,31 @@
     .timeline__item:last-child::before {
       display: none;
     }
-    /* 불렛 — 연도 숫자 앞에 위치 */
     .timeline__item::after {
       content: '';
       position: absolute;
-      left: 4px;
-      top: 6px;
-      width: 14px;
-      height: 14px;
+      left: 91px;
+      top: 3px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: var(--color-primary);
-      border: 2px solid #fff;
+      border: 3px solid #fff;
       box-shadow: 0 0 0 2px var(--color-primary);
       z-index: 1;
-      flex-shrink: 0;
     }
-    .timeline__year {
-      min-width: 60px;
-      padding-left: 32px;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--color-primary);
-      flex-shrink: 0;
-      line-height: 1.4;
-    }
+
+    /* 내용 — 우측 */
     .timeline__content {
-      padding-top: 3px;
-      flex: 1;
+      padding-left: 24px;
+      padding-top: 0;
+      flex: unset;
     }
     .timeline__content p {
       font-size: 15px;
       color: var(--color-dark);
       line-height: 1.7;
+      margin: 0;
     }
   </style>
 </head>
@@ -96,7 +110,7 @@
         <div class="value-grid">
           <div class="value-card"><div class="value-card__num">01</div><h3>부품·소재전문기업<em>산업통상자원부 인증</em></h3><p>2011년 취득. 소재 분야 핵심 전문 기업으로 인증받았습니다.</p></div>
           <div class="value-card"><div class="value-card__num">02</div><h3>특허 1건<em>절단기 하부 정반(2019)</em></h3><p>독자적인 가공 기술을 특허로 보호하여 기술 경쟁력을 강화하고 있습니다.</p></div>
-          <div class="value-card"><div class="value-card__num">03</div><h3>강소기업 선정<em>경영혁신형 중소기업 (중소기업청)</em></h3><p>2006년 경영혁신형 중소기업 선정.</p></div>
+          <div class="value-card"><div class="value-card__num">03</div><h3>강소기업 선정<em>경영혁신형 중소기업 (중소기업청)</em></h3><p>2006년 경영혁신형 중소기업 선정 되었습니다.</p></div>
           <div class="value-card"><div class="value-card__num">04</div><h3>기업부설연구소 보유<em>2026년 설립</em></h3><p>기업부설연구소를 설립하여 후판 가공 기술 R&D 역량을 강화하고 있습니다.</p></div>
         </div>
       </section>
