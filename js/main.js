@@ -60,7 +60,7 @@
     arrow.addEventListener('click', function () {
       var next = qs('.stats');
       if (next) {
-        var gnbHeight = 72;
+        var gnbHeight = 90;
         var top = next.getBoundingClientRect().top + window.pageYOffset - gnbHeight;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
