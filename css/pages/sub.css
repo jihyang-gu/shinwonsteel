@@ -176,7 +176,7 @@
 .value-card__num {
   font-size: 48px;
   font-weight: var(--font-weight-bold);
-  color: rgba(27, 100, 218, 0.12);
+  color: rgba(27, 100, 218, 0.55);
   line-height: 1;
   margin-bottom: 16px;
 }
