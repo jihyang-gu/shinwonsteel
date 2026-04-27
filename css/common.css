@@ -1122,3 +1122,5 @@
     text-decoration: none;
   }
 }
+.btn-primary { color: #fff !important; }
+.btn-outline { color: var(--color-primary) !important; }
