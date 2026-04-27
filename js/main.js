@@ -3,17 +3,14 @@
  */
 (function () {
   'use strict';
-
   function qs(selector, context) {
     return (context || document).querySelector(selector);
   }
   function qsa(selector, context) {
     return Array.from((context || document).querySelectorAll(selector));
   }
-
   /* 숫자 카운팅 애니메이션 */
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-
   function animateCount(el, target, duration, suffix) {
     var startTime = null;
     function step(timestamp) {
@@ -25,14 +22,13 @@
     }
     requestAnimationFrame(step);
   }
-
   function initStatsCounter() {
     var statsSection = qs('.stats');
     if (!statsSection) return;
     var counters = [
       { selector: '.stats__item:nth-child(1) strong', target: 35, suffix: '+', duration: 1800 },
       { selector: '.stats__item:nth-child(2) strong', target: 12, suffix: '종+', duration: 1200 },
-      { selector: '.stats__item:nth-child(4) strong', target: 1, suffix: '건', duration: 1200 },
+      // 4번째 항목(기업 신용등급 A등급)은 텍스트형이므로 카운터 제외
     ];
     var animated = false;
     if (!('IntersectionObserver' in window)) {
@@ -56,7 +52,6 @@
     }, { threshold: 0.3 });
     observer.observe(statsSection);
   }
-
   /* 히어로 스크롤 화살표 */
   function initHeroScrollArrow() {
     var arrow = qs('.hero__scroll-arrow');
@@ -66,12 +61,10 @@
       if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
-
   function init() {
     initStatsCounter();
     initHeroScrollArrow();
   }
-
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
