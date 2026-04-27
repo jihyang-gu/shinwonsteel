@@ -1108,3 +1108,9 @@
     gap: 12px;
   }
 }
+.gnb.menu-open .gnb__logo-text {
+  color: var(--color-dark) !important;
+}
+.gnb.menu-open .gnb__hamburger-line {
+  background-color: var(--color-dark) !important;
+}
